@@ -1,0 +1,28 @@
+{# 
+	Template used for lazy loading blog posts
+#}
+{% for post in entries.all() %}
+	<div class="col-12 col-lg-6">
+		<article class="h-100">
+			<a href="{{ post.url }}" class="h-100">
+				{% if post.featuredImage.count > 0 %}
+					<img src="{{ post.featuredImage.one().url("zPattern") }}" alt="">
+				{% endif %}
+				<strong>{{ post.friendlyTitle }}</strong>
+				{% if post.blogCategories.count > 0 %}
+					<p class="categories">
+						{% for cat in post.blogCategories.all() %}
+							<small><i>
+								{% if loop.index > 1 %}<span> | </span>{% endif %}
+									<span>{{ cat.friendlyTitle }}</span>
+							</i></small>
+						{% endfor %}
+					</p>
+				{% endif %}
+				{% if post.briefDescription | length != "" %}
+					<p>{{ post.briefDescription }}</p>
+				{% endif %}
+			</a>
+		</article>
+	</div>
+{% endfor %}

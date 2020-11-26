@@ -1,0 +1,35 @@
+//IMPORT FONTS
+
+$black: #000000;
+$white: #ffffff;
+$font-color: #3B4856;
+$link-color: #FE505C;
+$link-hover-color: darken($link-color, 10%);
+$button-color: #FE505C;
+$button-hover-color: darken($button-color, 10%);
+$label-color: #212948;
+$border-color: #dee2e6;
+$error-color: #FE505C;
+
+$default-font: 'Open Sans', sans-serif;
+
+$base-font-size: 16px; // base font-size (1rem = 16px)
+$small-font-size: 0.75rem;
+
+$input-height: 40px; // a consistent height to use for textboxes, buttons or dropdowns
+
+$header-height: 100px;
+$sticky-header-height: 60px;
+
+$transition-time: 0.35s;
+
+@mixin fa-icon($content) {
+	display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900; 
+	content: $content;
+}

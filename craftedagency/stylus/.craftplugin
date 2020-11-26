@@ -1,0 +1,31 @@
+{
+  "pluginName": "Style Editor",
+  "pluginDescription": "Crafted Agency's plugin for base website design properties.",
+  "pluginVersion": "1.0.2",
+  "pluginAuthorName": "Crafted Agency",
+  "pluginVendorName": "Crafted Agency",
+  "pluginAuthorUrl": "https://craftedagency.com",
+  "pluginAuthorGithub": "",
+  "codeComments": "",
+  "pluginComponents": [
+    "controllers",
+    "fieldtypes",
+    "models",
+    "services",
+    "settings",
+    "variables"
+  ],
+  "consolecommandName": "",
+  "controllerName": "StylusController",
+  "cpsectionName": "",
+  "elementName": "",
+  "fieldName": "stylusfield",
+  "modelName": "Settings",
+  "purchasableName": "",
+  "recordName": "",
+  "serviceName": "StylusService",
+  "taskName": "",
+  "utilityName": "",
+  "widgetName": "",
+  "apiVersion": "api_version_3_0"
+}

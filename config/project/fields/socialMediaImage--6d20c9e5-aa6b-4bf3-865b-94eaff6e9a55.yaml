@@ -1,0 +1,25 @@
+contentColumnType: string
+fieldGroup: 2c2e05d8-c2c5-4522-8629-bd32d734df49
+handle: socialMediaImage
+instructions: ''
+name: 'Social Media Image'
+searchable: true
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: ''
+  singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: ''
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

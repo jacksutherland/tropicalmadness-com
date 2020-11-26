@@ -1,0 +1,8 @@
+handle: generic
+hasUrls: true
+name: Generic
+settings:
+  path: images/generic
+sortOrder: 1
+type: craft\volumes\Local
+url: 'http://proto.craftedagency.com/images/generic'

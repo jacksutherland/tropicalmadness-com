@@ -1,0 +1,301 @@
+field: 9fe52807-0518-4dca-a594-e567cf24290f
+fieldLayouts:
+  a00d6b24-6bcb-4adc-b465-c1d592e649f5:
+    tabs:
+      -
+        fields:
+          6b49af58-446f-4157-ae36-eafbcd9ca3ec:
+            required: true
+            sortOrder: 3
+          76db206c-3545-4df5-894f-5adaf51add96:
+            required: false
+            sortOrder: 2
+          a94448e0-6439-47a7-96e6-c0cd02006d7f:
+            required: true
+            sortOrder: 4
+          b1792bf0-1ecc-4400-bef4-3d1d091c5f15:
+            required: true
+            sortOrder: 1
+          bd7350de-8556-4f6f-8d0a-c89297e0956b:
+            required: false
+            sortOrder: 6
+          f2929e86-c399-445c-9713-10c5e1d5af1a:
+            required: false
+            sortOrder: 5
+        name: Content
+        sortOrder: 1
+fields:
+  6b49af58-446f-4157-ae36-eafbcd9ca3ec:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  76db206c-3545-4df5-894f-5adaf51add96:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageSize
+    instructions: ''
+    name: 'Image Size'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Cover
+            -
+              - value
+              - cover
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Contain
+            -
+              - value
+              - contain
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a94448e0-6439-47a7-96e6-c0cd02006d7f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b1792bf0-1ecc-4400-bef4-3d1d091c5f15:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageAlignment
+    instructions: ''
+    name: 'Image Alignment'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bd7350de-8556-4f6f-8d0a-c89297e0956b:
+    contentColumnType: string
+    fieldGroup: null
+    handle: ctaStyle
+    instructions: ''
+    name: 'CTA Style'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Button
+            -
+              - value
+              - button
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Link
+            -
+              - value
+              - link
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f2929e86-c399-445c-9713-10c5e1d5af1a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaButton
+    instructions: ''
+    name: 'CTA Button'
+    searchable: true
+    settings:
+      selectionLabel: ' -- Select link type --'
+      types:
+        __assoc__:
+          -
+            - 4XCzYeks
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Entry
+                -
+                  - label
+                  - Entry
+                -
+                  - showTarget
+                  - '1'
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - sources
+                  -
+                    - 'section:4f3d4cca-252e-4cd9-bae0-6652ed7e73df'
+                    - 'section:4661a716-33f4-4159-94e5-d3240d192e6f'
+                    - singles
+                    - 'section:d3d0130b-aac1-400d-a2d1-576e955299b6'
+                    - 'section:4806c5ad-88d9-43d3-abea-d6a110289b8e'
+                    - 'section:a569cb3d-5a53-4207-829f-e9185e223d45'
+                    - 'section:546bd69c-f169-4562-90d4-af0c7de5a5ea'
+                    - 'section:f960fa3a-d667-4070-80be-57b945d9d897'
+                -
+                  - targetSiteId
+                  - null
+                -
+                  - viewMode
+                  - null
+                -
+                  - selectionLabel
+                  - ''
+                -
+                  - localizeRelations
+                  - false
+          -
+            - JxneBOsF
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Url
+                -
+                  - label
+                  - Url
+                -
+                  - showTarget
+                  - '1'
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - placeholder
+                  - ''
+                -
+                  - useUrlAsDefaultText
+                  - '1'
+                -
+                  - allowRelativeUrl
+                  - ''
+          -
+            - bKOPbcgE
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Asset
+                -
+                  - label
+                  - Asset
+                -
+                  - showTarget
+                  - '1'
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - sources
+                  - '*'
+                -
+                  - targetSiteId
+                  - null
+                -
+                  - viewMode
+                  - null
+                -
+                  - selectionLabel
+                  - ''
+                -
+                  - localizeRelations
+                  - false
+    translationKeyFormat: null
+    translationMethod: none
+    type: flipbox\craft\link\fields\Link

@@ -1,0 +1,70 @@
+field: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+fieldLayouts:
+  a3f61ebf-9361-488e-b9fd-a24b68981543:
+    tabs:
+      -
+        fields:
+          600bd547-60c5-4d24-a2d1-e7d6d18d7299:
+            required: false
+            sortOrder: 2
+          bf425f16-521b-4cae-b422-256b6d007bdb:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  600bd547-60c5-4d24-a2d1-e7d6d18d7299:
+    contentColumnType: string
+    fieldGroup: null
+    handle: questions
+    instructions: ''
+    name: Questions
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 21d873c5-29b7-404c-b44a-c20de90782a0
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 20a9d603-2cd6-4c07-97ee-9eddca6ff4fb
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_4_questions}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  bf425f16-521b-4cae-b422-256b6d007bdb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: accordion
+name: Accordion
+sortOrder: 4

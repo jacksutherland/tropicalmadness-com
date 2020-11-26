@@ -1,0 +1,21 @@
+fieldLayouts:
+  99f03682-6871-4c10-94d9-9fe523aead1e:
+    tabs:
+      -
+        fields:
+          6d20c9e5-aa6b-4bf3-865b-94eaff6e9a55:
+            required: false
+            sortOrder: 4
+          6ff83daa-c3e8-40cf-ae52-ada18d7d91b3:
+            required: false
+            sortOrder: 2
+          82330f30-64d0-4c8f-9477-e622e91729bc:
+            required: false
+            sortOrder: 3
+          c55094c5-9fea-4d5d-8d8f-bb78a112fbc5:
+            required: false
+            sortOrder: 1
+        name: 'SEO Defaults'
+        sortOrder: 1
+handle: seoDefaults
+name: 'SEO Defaults'

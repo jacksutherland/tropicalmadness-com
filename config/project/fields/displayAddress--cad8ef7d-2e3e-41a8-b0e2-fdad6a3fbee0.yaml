@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 06e6513a-237e-47b5-b14b-bfda674fa1ee
+handle: displayAddress
+instructions: ''
+name: 'Display Address'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '3'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

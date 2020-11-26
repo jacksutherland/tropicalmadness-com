@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 76576f51-24bb-4ab7-aa54-347469e14abd
+handle: headerModule
+instructions: 'If no slides are added, the entry''s Display Title will show as the page''s header. 1 slide will display as a page hero. If more than one slides are added, they will display as a carousel.'
+name: 'Header Module'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_headermodule}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

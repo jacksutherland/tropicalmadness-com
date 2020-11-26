@@ -1,0 +1,28 @@
+{% set slugs = craft.app.request.getParam("slugs") %}
+{% if slugs != "" %} 
+	{# QUERY BY LIST OF SLUGS #}
+	{% set locations = craft.entries.section("locations").slug(slugs) %}
+{% else %}
+	{# QUERY BY REGION #}
+	{% set region = region is defined ? region : craft.app.request.getParam("region") %}
+	{% if region == "" %}
+		{% set locations = craft.entries.section("locations") %}
+	{% else %}
+		{% set regionEntry = craft.entries.slug(region) %}
+		{% set locations = craft.entries.section("locations").relatedTo(regionEntry) %}
+	{% endif %}
+{% endif %}
+{% for location in locations.all() %}
+	<li{% if location.mappableAddress | trim | length > 0 %} data-slug="{{ location.slug }}" data-json='{
+			"name": "{{ location.friendlyTitle }}",
+			"slug": "{{ location.slug }}",
+			"mappableAddress": "{{ location.mappableAddress | replace({"\n":' ', "\r":' '}) }}",
+			"displayAddress": "{{ location.displayAddress | replace({"\n":'~'}) }}",
+			"url": "{{ location.url }}",
+			"region": "{{ location.regions.count > 0 ? location.regions.one().slug : "" }}"
+		}'{% endif %}>
+		{# Adding data-zoom to any element zooms in on map when clicked #}
+		<a href="/zoom" data-zoom><i class="fas fa-map-marker-alt"></i></a>
+		{{ location.friendlyTitle }}
+	</li>
+{% endfor %}

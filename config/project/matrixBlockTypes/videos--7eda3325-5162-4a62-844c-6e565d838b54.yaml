@@ -1,0 +1,77 @@
+field: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+fieldLayouts:
+  224c7cc4-7219-4f8b-9f2f-e7dd3608b3bc:
+    tabs:
+      -
+        fields:
+          4dd991ed-e013-40d6-975d-5866096f678f:
+            required: false
+            sortOrder: 2
+          d87cd8b7-79c2-4194-81cc-707eb366ee1b:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  4dd991ed-e013-40d6-975d-5866096f678f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: videos
+    instructions: 'Display a single video, or a playlist of videos'
+    name: Videos
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 20c0f2ad-1d13-4e52-87d0-2dba3cb324d6
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2d4da001-0127-4201-a7b6-59aa94c98fe1
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 1eb2d6b4-b46d-485d-8892-1cf6e3936fb2
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_8_videos}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: '1'
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  d87cd8b7-79c2-4194-81cc-707eb366ee1b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: videos
+name: Videos
+sortOrder: 3

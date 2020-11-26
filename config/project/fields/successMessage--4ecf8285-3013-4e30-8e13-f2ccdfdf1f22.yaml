@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: fac5537d-5369-4ff9-89a9-d5e9afd69e6d
+handle: successMessage
+instructions: ''
+name: 'Success Message'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

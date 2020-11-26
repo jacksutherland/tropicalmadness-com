@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: ac373799-0c0c-4016-b709-6b3ea4d28372
+handle: productType
+instructions: ''
+name: 'Product Type'
+searchable: true
+settings:
+  entryTypes:
+    - f560c3c2-c641-4dd1-b8c2-0b5ffde9be2f
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add a type'
+  source: null
+  sources:
+    - 'section:a569cb3d-5a53-4207-829f-e9185e223d45'
+  targetSiteId: null
+  userGroups: null
+  users: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: nfourtythree\entriessubset\fields\EntriesSubsetField

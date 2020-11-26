@@ -1,0 +1,113 @@
+{% extends "_layoutamp" %}
+
+{% set entry = craft.entries.section('blogPost').slug(slug)[0] %}
+{% set menu = craft.entries.section("topNav").level(1) %}
+
+{% block content %}
+  <header data-title="Site Header">
+    <div class="container">
+      <a href="/">
+        <amp-img src="/../images/logo-placeholder.png" class="logo" alt="{{ systemName }}" title="{{ systemName }}" layout="fixed" height="80" width="200"></amp-img>
+      </a>
+      <div class="mobile-menu-trigger" on="tap:AMP.setState({ hideNav: false })" role="button" tabindex="0">
+        <i class="menu-closed fas fa-bars fa-2x"></i>
+      </div>
+      <nav id="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" hidden [hidden]="hideNav">
+        <div class="menu-closed" on="tap:AMP.setState({ hideNav: true })" role="button" tabindex="0">
+          <i class="fa fa-times"></i>
+          <span>Close Menu</span>
+        </div>
+        <ul>
+          {% for item in menu.all() %}
+            <li>
+              <a itemprop="url" id="{{ item.slug }}-button" {% if item.children.count() > 0 %}class="parent-menu-item"{% endif %}{% if item.menuEntry.count() > 0 %} href="{{ item.menuEntry.one().url }}"{% endif %}>
+                <span itemprop="name" class="menu-title">{{ item.menuTitle }}</span>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="blog-post">
+    <div class="hero module">
+      <div class="container">
+        <h1>{{ entry.friendlyTitle }}</h1>
+
+        <!-- <div class="blog-categories">
+        <p><strong>Categories: </strong>
+          {% for cat in entry.blogCategories %}
+              {% if loop.index > 1 %}<span> | </span>{% endif %}
+              <a href="{{ cat.url }}">{{ cat.friendlyTitle }}</a>
+          {% endfor %}
+        </p>
+        </div> -->
+
+        <!-- <p class="blog-author"><strong>Author: </strong>{{ entry.author }}</p> -->
+        <p class="post-date"><strong>Post Date: </strong>{{ entry.postDate | date("F d, Y") }}</p>
+
+        <div class="blog-share">
+          <p><strong>Share: </strong>
+            <a class="facebook-share-button" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u={{ craft.app.request.absoluteUrl }}&display=popup&ref=plugin&src=share_button" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?url={{ craft.app.request.absoluteUrl }}&text={{ entry.friendlyTitle }}" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="linkedin-share-button" href="https://www.linkedin.com/shareArticle?url={{ craft.app.request.absoluteUrl }}&title={{entry.friendlyTitle}}" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </p>
+        </div>
+
+        {% if entry.featuredImage.count > 0 %}
+          <amp-img src="{{ entry.featuredImage.one().url("zPattern") }}" alt="{{ entry.featuredImage.one().title }}" layout="responsive" height="{{entry.featuredImage.one().getHeight("zPattern") }}" width="{{entry.featuredImage.one().getWidth("zPattern") }}"></amp-img>
+        {% endif %}
+
+        <div class="row">
+          <div class="col-12">
+            <div class="blog-entry">
+              {{ entry.richText }}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer data-title="Site Footer">
+    <div class="container">
+      <a href="/">
+        <amp-img src="/../images/logo-placeholder.png" class="logo" alt="{{ systemName }}" title="{{ systemName }}" layout="fixed" height="80" width="200"></amp-img>
+      </a>
+      <div class="info">
+        {% if contactInfo.phoneNumber | length %}
+          <p>Phone: <a href="tel:{{ contactInfo.phoneNumber }}">{{ contactInfo.phoneNumber }}</a></p>
+        {% endif %}
+        {% if contactInfo.emailAddress %}
+          <p>Email: <a href="mailto:{{ contactInfo.emailAddress }}">{{ contactInfo.emailAddress }}</a></p>
+        {% endif %}
+      </div>
+      <div class="social">
+        {% if contactInfo.facebookLink | length %}
+          <a href="{{ contactInfo.facebookLink }}" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+        {% endif %}
+        {% if contactInfo.twitterLink | length %}
+          <a href="{{ contactInfo.twitterLink }}" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+        {% endif %}
+        {% if contactInfo.linkedinLink | length %}
+          <a href="{{ contactInfo.linkedinLink }}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+        {% endif %}
+        {% if contactInfo.pinterestLink | length %}
+          <a href="{{ contactInfo.pinterestLink }}" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
+        {% endif %}
+        {% if contactInfo.youtubeLink | length %}
+          <a href="{{ contactInfo.youtubeLink }}" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+        {% endif %}
+      </ul>
+    </div>
+  </footer>
+{% endblock %}

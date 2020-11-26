@@ -1,0 +1,43 @@
+{% import "_includes/forms" as forms %}
+{% from _self import renderTypes %}
+{% set identifierField = 'identifier' %}
+
+{% set options = [{
+    label: field.selectionLabel|t('link')
+}] %}
+{% for key, type in field.types %}
+    {% set options = options|merge([{
+        label: type.settings.label ?? type.displayName,
+        value: key
+    }]) %}
+{% endfor %}
+
+{% set activeIdentifier = value ? value.identifier : '' %}
+{% namespace field.handle %}
+    <div class="flex">
+        <div style="align-self: flex-start;">
+            {{ forms.selectField({
+                name: identifierField,
+                id: identifierField,
+                options: options,
+                value: value ? value.identifier : null,
+                toggle: true
+            }) }}
+        </div>
+        <div class="flex-grow">
+            {{ renderTypes(activeIdentifier, field, value, element) }}
+        </div>
+    </div>
+{% endnamespace %}
+
+{% macro renderTypes(activeIdentifier, field, value, element) %}
+    {% for key, type in field.types %}
+        {% set isCurrent = activeIdentifier == type.identifier %}
+        {% set type = isCurrent and value ? value : type %}
+        <div id="{{ key|id }}" class="settings{% if not isCurrent %} hidden{% endif %}">
+            {% namespace 'types['~key~']' %}
+            {{ type.inputHtml(field, element)|raw }}
+            {% endnamespace %}
+        </div>
+    {% endfor %}
+{% endmacro %}

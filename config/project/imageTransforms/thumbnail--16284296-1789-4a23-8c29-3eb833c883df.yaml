@@ -1,0 +1,9 @@
+format: null
+handle: thumbnail
+height: 150
+interlace: none
+mode: crop
+name: Thumbnail
+position: center-center
+quality: 30
+width: 150

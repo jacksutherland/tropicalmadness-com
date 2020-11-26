@@ -1,0 +1,102 @@
+<div class="page-header">
+	{% if entry is defined and entry.headerModule and entry.headerModule.count > 1 %}
+		
+		<div data-title="Page Hero" class="hero-carousel" data-delay="{{ pageHeader.secondsBetweenTransition }}">
+			<div class="slides">
+				{% for slide in entry.headerModule.all() %}
+					<div id="slide-{{ slide.id }}" class="slide header-image {{ pageHeader.transitionType }}{% if loop.index == 1 %} default{% endif %}">
+						<div class="image-wrap {% if slide.heroImageOverlay != 'overlay-none' %}image-overlay {{ slide.heroImageOverlay }}{% endif %}">
+							{% if slide.heroVideo.count > 0 %}
+								<video id="hero-vid" loop autoplay muted poster="{{ slide.heroImage.one().url("hero") }}" class="fullscreen-video desktop-header">
+							        <source data-src="{{ slide.heroVideo.one().url("hero") }}" type="video/mp4">
+							    </video>
+							{% else %}
+								<div class="desktop-header" style="background-image: url('{{ slide.heroImage.one().url("hero") }}'); {% if slide.heroImageFocalPoint != 'center' %}background-position: {{ slide.heroImageFocalPoint }}{% endif %}" ></div>
+							{% endif %}
+						</div>
+						{% if slide.mobileHeroImage.count > 0 %}
+							<div class="mobile-header{% if slide.heroImageOverlay != 'overlay-none' %} image-overlay {{ slide.heroImageOverlay }}{% endif %}" style="background-image: url('{{ slide.mobileHeroImage.one().url("hero") }}')"></div>
+						{% endif %}
+						{% if slide.heroTitle | length or slide.heroText | length or entry.heroCta %}
+							<div class="header-content">
+								<div class="container">
+									<div class="row">
+										<div class="hero-text-wrap text-center col-12 col-md-9 mx-auto">
+											{% if slide.heroTitle %}
+												<h1>{{ slide.heroTitle }}</h1>
+											{% endif %}
+											{% if slide.heroText %}
+												<p>{{ slide.heroText }}</p>
+											{% endif %}
+											{% if slide.heroCta %}
+												<a href="{{ slide.heroCta.url }}" target="{{ slide.heroCta.target }}" class="button">{{ slide.heroCta.text }}</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+			<div class="carousel-nav">
+				<div class="container">
+					{% for slide in entry.headerModule.all() %}
+						<a href="slide-{{ slide.id }}"{% if loop.index == 1 %} class="selected"{% endif %}></a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	{% elseif entry is defined and  entry.headerModule and entry.headerModule.count == 1 %}	
+		
+		{% set slide = entry.headerModule.one() %}
+
+		<div data-title="Page Hero" class="hero header-image">
+			<div class="image-wrap {% if slide.heroImageOverlay != 'overlay-none' %} image-overlay {{ slide.heroImageOverlay }}{% endif %}">
+				{% if slide.heroVideo.count > 0 %}
+					<video loop autoplay muted poster="{{ slide.heroImage.one().url("hero") }}" class="fullscreen-video desktop-header">
+				        <source src="{{ slide.heroVideo.one().url("hero") }}" type="video/mp4">
+				    </video>
+				{% else %}
+					<div class="desktop-header" style="background-image: url('{{ slide.heroImage.one().url("hero") }}'); {% if slide.heroImageFocalPoint != 'center' %}background-position: {{ slide.heroImageFocalPoint }}{% endif %}" ></div>
+				{% endif %}
+			</div>
+			{% if slide.mobileHeroImage.count > 0 %}
+				<div class="mobile-header{% if slide.heroImageOverlay != 'overlay-none' %} image-overlay {{ slide.heroImageOverlay }}{% endif %}" style="background-image: url('{{ slide.mobileHeroImage.one().url("hero") }}')"></div>
+			{% endif %}
+			{% if slide.heroTitle | length or slide.heroText | length or entry.heroCta %}
+				<div class="header-content">
+					<div class="container">
+						<div class="row">
+							<div class="hero-text-wrap text-center col-12 col-md-9 mx-auto">
+								{% if slide.heroTitle %}
+									<h1>{{ slide.heroTitle }}</h1>
+								{% endif %}
+								{% if slide.heroText %}
+									<p>{{ slide.heroText }}</p>
+								{% endif %}
+								{% if slide.heroCta %}
+									<a href="{{ slide.heroCta.url }}" target="{{ slide.heroCta.target }}" class="button">{{ slide.heroCta.text }}</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+
+	{% else %}
+
+		{% set title = entry is defined ? entry.friendlyTitle : title %}
+
+		<div class="text-header py-2" data-title="Page Text Header">
+			<div class="container">
+				<h1 class="h2 my-0">
+					{{ title }}
+				</h1>
+			</div>
+		</div>
+
+	{% endif %}
+</div>

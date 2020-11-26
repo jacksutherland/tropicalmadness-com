@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: blogCategories
+name: 'Blog Categories'
+propagationMethod: all
+siteSettings:
+  696b3395-9e92-4b02-9ba9-94c066f4348c:
+    enabledByDefault: true
+    hasUrls: true
+    template: blog/_category
+    uriFormat: 'blog/{slug}'
+structure:
+  maxLevels: 1
+  uid: d5e6b98e-632f-43b4-bc27-52e62bdf7083
+type: structure

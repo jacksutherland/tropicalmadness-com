@@ -1,0 +1,11 @@
+{% set relativeUrl = '/' ~  craft.app.request.getSegment(1) ~ '/' %}
+{% if craft.app.request.segments | length > 1 and craft.app.request.getSegment(2) != 'region' %}
+	{% set relativeUrl = relativeUrl ~ craft.app.request.getSegment(2) ~ '/' %}
+{% endif %}
+<script src="{{ url('/js/locations.js?v=1.00') }}"></script>
+<script>
+	dom.onLoad(function()
+	{
+		new locationspage('{{ craft.app.globals.getSetByHandle('locations').mapsApiKey }}', '{{ relativeUrl }}');
+	});
+</script>

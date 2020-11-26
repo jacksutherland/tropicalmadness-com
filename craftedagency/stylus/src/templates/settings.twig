@@ -1,0 +1,48 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Stylus plugin for Craft CMS 3.x
+ *
+ * Stylus Settings.twig
+ *
+ * @author    Crafted Agency
+ * @copyright Copyright (c) 2020 Crafted Agency
+ * @link      https://craftedagency.com
+ * @package   Stylus
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% set selectedSubnavItem = 'settings' %}
+
+{% do view.registerAssetBundle("craftedagency\\stylus\\assetbundles\\stylus\\StylusAsset") %}
+
+<h2>Stylus Settings</h2>
+
+{# {{ 
+    forms.textField({
+        label: 'Twitch Client ID',
+        id: 'TwitchClientId',
+        name: 'TwitchClientId',
+        value: settings['TwitchClientId'],
+        required:false
+    })
+}} #}
+
+<hr>
+
+<h2>More Stylus Settings</h2>
+
+{# {{ 
+    forms.textField({
+        label: 'YouTube API Key',
+        instructions: '',
+        id: 'YouTubeApiKey',
+        name: 'YouTubeApiKey',
+        value: settings['YouTubeApiKey'],
+        required:false
+    })
+}} #}
+

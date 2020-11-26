@@ -1,0 +1,18 @@
+{# 
+	Template used for lazy loading products
+#}
+{% for product in entries.all() %}
+	<div class="col-12 col-md-6 col-lg-4">
+		<article class="h-100">
+			<a href="{{ product.url }}" class="h-100">
+				{% if product.productImages and product.productImages.count > 0 %}
+					<img src="{{ product.productImages.one().url("blockImage") }}" class="pb-2" alt="">
+				{% endif %}
+				<h4>{{ product.friendlyTitle }}</h4>
+				{% if product.briefDescription | length != "" %}
+					<p>{{ product.briefDescription }}</p>
+				{% endif %}
+			</a>
+		</article>
+	</div>
+{% endfor %}

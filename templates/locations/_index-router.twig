@@ -1,0 +1,2 @@
+{% set entry = craft.entries.section("pages").slug(craft.app.request.getSegment(1)).one() %}
+{% extends "pages/_entry" %}

@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 4
+template: search/_index.twig
+uriParts:
+  - search/
+uriPattern: search/

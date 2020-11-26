@@ -1,0 +1,25 @@
+contentColumnType: string
+fieldGroup: 03da3170-496f-4021-b0f6-39cb6d0097f0
+handle: menuEntry
+instructions: ''
+name: 'Menu Entry'
+searchable: false
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'section:4f3d4cca-252e-4cd9-bae0-6652ed7e73df'
+    - 'section:4661a716-33f4-4159-94e5-d3240d192e6f'
+    - singles
+    - 'section:d3d0130b-aac1-400d-a2d1-576e955299b6'
+    - 'section:4806c5ad-88d9-43d3-abea-d6a110289b8e'
+    - 'section:a569cb3d-5a53-4207-829f-e9185e223d45'
+    - 'section:f960fa3a-d667-4070-80be-57b945d9d897'
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

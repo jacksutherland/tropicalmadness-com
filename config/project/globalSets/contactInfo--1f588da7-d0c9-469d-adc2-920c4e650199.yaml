@@ -1,0 +1,30 @@
+fieldLayouts:
+  90b19dee-53a4-4f38-ad91-373b7857fa40:
+    tabs:
+      -
+        fields:
+          318264e9-f694-4fb9-b3a0-db539d032b0a:
+            required: false
+            sortOrder: 3
+          57335956-0e3b-488d-a3a2-ff0145246ec6:
+            required: false
+            sortOrder: 1
+          b644826d-6c17-4b03-898a-cecc65cce9a8:
+            required: false
+            sortOrder: 5
+          c338d0fc-5a08-4a0f-a4e1-6bf751e85cfe:
+            required: false
+            sortOrder: 4
+          c42afa45-535a-490c-9423-555c74895e38:
+            required: false
+            sortOrder: 6
+          e88999e1-c214-4665-aca4-8f0e7d1889ac:
+            required: false
+            sortOrder: 2
+          f58b59db-d3f4-47f2-89cb-b34cd2bc7cd7:
+            required: false
+            sortOrder: 7
+        name: 'Social Links'
+        sortOrder: 1
+handle: contactInfo
+name: 'Contact Info'

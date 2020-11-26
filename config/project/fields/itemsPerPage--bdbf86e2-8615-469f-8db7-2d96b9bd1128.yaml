@@ -1,0 +1,17 @@
+contentColumnType: integer(10)
+fieldGroup: 4e1ff984-18ac-4f2c-9a1f-501262dae362
+handle: itemsPerPage
+instructions: 'The number of items to retrieve during each new lazy load.'
+name: 'Items Per Page'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: '12'
+  max: null
+  min: '1'
+  prefix: ''
+  size: null
+  suffix: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: 2c2e05d8-c2c5-4522-8629-bd32d734df49
+handle: sitemapFrequency
+instructions: 'Set to weekly if none selected'
+name: 'Sitemap Frequency'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Always
+        -
+          - value
+          - always
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hourly
+        -
+          - value
+          - hourly
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Daily
+        -
+          - value
+          - daily
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Weekly
+        -
+          - value
+          - weekly
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Monthly
+        -
+          - value
+          - monthly
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Yearly
+        -
+          - value
+          - yearly
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Never
+        -
+          - value
+          - never
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+
+{% block scripts %}
+	{% include "pages/_entry-type-scripts/" ~ entry.type ignore missing %}
+{% endblock %}
+
+{% block content %}
+
+	{% include "_includes/page-header" %}
+
+	{% include "_modules/page-module-top" %}
+
+	{% include "pages/_entry-types/" ~ entry.type %}
+
+	{% include "_modules/page-module-bottom" %}
+
+{% endblock %}

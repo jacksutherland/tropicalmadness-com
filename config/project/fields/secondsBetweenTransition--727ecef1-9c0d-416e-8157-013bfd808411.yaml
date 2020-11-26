@@ -1,0 +1,17 @@
+contentColumnType: integer(10)
+fieldGroup: 3b9444c1-4313-4c03-b79b-b234d2a1c99d
+handle: secondsBetweenTransition
+instructions: ''
+name: 'Seconds Between Transition'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: '5'
+  max: null
+  min: '1'
+  prefix: ''
+  size: null
+  suffix: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

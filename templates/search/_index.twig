@@ -1,0 +1,32 @@
+{% extends "_layout" %}
+
+{% set qry = craft.request.getQuery('q') %}
+
+{% block content %}
+	
+	{% include "_includes/page-header" with { title: "Search" } %}
+
+	<div id="search">
+		<div class="container">
+
+			<form action="/search" method="get" class="form">
+				<div class="row">
+					<div class="col-9 col-lg-6">
+							<input name="q" type="text"{% if qry %} value="{{ qry }}"{% endif %}>
+					</div>
+					<div class="col-3 col-lg-1">
+						<button>Submit</button>
+					</div>
+				</div>
+			</form>
+
+			{% include 'search/_search-description' %}
+
+			<div class="search-results">
+				{% include 'lists/_lazyloader' with { ajaxUrl: 'search/results', checkUrl: 'search/results-check', relation: craft.request.getQuery('q') } %}
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

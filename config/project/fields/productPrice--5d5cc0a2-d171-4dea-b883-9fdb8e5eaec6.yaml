@@ -1,0 +1,17 @@
+contentColumnType: 'decimal(12,2)'
+fieldGroup: ac373799-0c0c-4016-b709-6b3ea4d28372
+handle: productPrice
+instructions: ''
+name: 'Product Price'
+searchable: true
+settings:
+  decimals: '2'
+  defaultValue: null
+  max: null
+  min: '0'
+  prefix: ''
+  size: null
+  suffix: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

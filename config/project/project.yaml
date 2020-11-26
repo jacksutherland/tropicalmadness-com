@@ -1,0 +1,96 @@
+dateModified: 1605728722
+email:
+  fromEmail: melina@craftedagency.com
+  fromName: 'SPX Power & Energy'
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  entriessubset:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.1
+  link:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  sentry:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      clientDsn: 'https://ed86a721b3f8405590efe0b141da1b72@o409940.ingest.sentry.io/5283359'
+      enabled: '1'
+      environment: $ENVIRONMENT
+      excludedCodes: '404'
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.1.1
+    settings:
+      description: ''
+      facebookAppId: ''
+      metaTemplate: ''
+      removeAlternateUrls: ''
+      robots:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: ignore
+      socialImage: ''
+      title:
+        -
+          __assoc__:
+            -
+              - key
+              - '1'
+            -
+              - locked
+              - '0'
+            -
+              - template
+              - '{title}'
+        -
+          __assoc__:
+            -
+              - key
+              - '2'
+            -
+              - locked
+              - '1'
+            -
+              - template
+              - ' - {{ siteName }}'
+      titleSuffix: null
+      twitterHandle: ''
+  stylus:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+system:
+  edition: solo
+  live: true
+  name: 'Crafted Base Project'
+  schemaVersion: 3.5.13
+  timeZone: America/New_York
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

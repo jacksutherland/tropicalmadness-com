@@ -1,0 +1,21 @@
+fieldLayouts:
+  b43c931f-4aef-45b4-b6cf-1c329d0c856d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: d45f6178-2985-48cc-8c2c-bc5fa4f42307
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Overview
+        sortOrder: 1
+handle: region
+hasTitleField: true
+name: Region
+section: 546bd69c-f169-4562-90d4-af0c7de5a5ea
+sortOrder: 1
+titleFormat: ''

@@ -1,0 +1,6 @@
+{% extends "link/_components/fieldtypes/Link/types/input" %}
+{% import "_includes/forms" as forms %}
+
+{% block url %}
+    {% include '_includes/forms/elementSelect' with input only %}
+{% endblock %}

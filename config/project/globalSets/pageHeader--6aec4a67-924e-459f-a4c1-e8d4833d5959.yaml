@@ -1,0 +1,15 @@
+fieldLayouts:
+  f5a8b088-9fd1-4a2d-a53f-57962bbd10b4:
+    tabs:
+      -
+        fields:
+          727ecef1-9c0d-416e-8157-013bfd808411:
+            required: false
+            sortOrder: 2
+          e68aa50f-b83d-4488-8dde-21faf6fc8caf:
+            required: false
+            sortOrder: 1
+        name: Carousel
+        sortOrder: 1
+handle: pageHeader
+name: 'Page Header'

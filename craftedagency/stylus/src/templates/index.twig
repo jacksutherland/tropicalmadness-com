@@ -1,0 +1,191 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Craft CMS 3.x Plugin
+ *
+ * Crafted Agency's plugin for base website design properties.
+ *
+ * @link      craftedagency.com
+ * @copyright Copyright (c) 2020 Crafted Agency
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% set fullPageForm = true %}
+
+{% do view.registerAssetBundle("craftedagency\\stylus\\assetbundles\\stylus\\StylusAsset") %}
+
+{% set docsUrl = "???" %}
+
+{% set title = "Style Editor" %}
+
+{% block actionButton %}
+  <div class="btngroup">
+    <input type="submit" class="btn submit" value="{{ 'Save' | t('app') }}">
+  </div>
+{% endblock %}
+
+{% macro tagFields(fieldTitle, tagName, tagStyles) %}
+
+  <h2 data-peekaboo="{{ tagName }}-peekaboo">
+    {{ fieldTitle }}
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 354 448" style="enable-background:new 0 0 354 448;" xml:space="preserve">
+      <path d="M346,231.8L14,416.2c-7.8,4.2-14,0.5-14-8.2V40c0-8.8,6.2-12.5,14-8.2l332,184.5C353.8,220.5,353.8,227.5,346,231.8z"></path>
+    </svg>
+  </h2>
+
+  <div id="{{ tagName }}-peekaboo" class="peekaboo">
+
+    <div class="field slider-field">
+      <div class="heading">
+        <label for="{{ tagName }}FontSize">Font Size</label>
+      </div>
+      <div class="slider-input input ltr">
+        <input name="{{ tagName }}FontSize" type="range" min="8" max="144" value="{{ tagStyles['font-size'] }}" data-slider="font-size" data-sample="{{ tagName }}-sample-text">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="field slider-field">
+      <div class="heading">
+        <label for="{{ tagName }}LineHeight">Line Height</label>
+      </div>
+      <div class="slider-input input ltr">
+        <input name="{{ tagName }}LineHeight" type="range" min="7" max="160" value="{{ tagStyles['line-height'] }}" data-slider="line-height" data-sample="{{ tagName }}-sample-text">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="field slider-field">
+      <div class="heading">
+        <label for="{{ tagName }}FontWeight">Font Weight</label>
+      </div>
+      <div class="slider-input input ltr">
+        <input name="{{ tagName }}FontWeight" type="range" min="100" max="900" step="100" value="{{ tagStyles['font-weight'] }}" data-slider="font-weight" data-sample="{{ tagName }}-sample-text">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="field slider-field">
+      <div class="heading">
+        <label for="{{ tagName }}LetterSpacing">Letter Spacing</label>
+      </div>
+      <div class="slider-input input ltr">
+        <input name="{{ tagName }}LetterSpacing" type="range" min="-17" max="32" step="0.1" value="{{ tagStyles['letter-spacing'] }}" data-slider="letter-spacing" data-sample="{{ tagName }}-sample-text">
+        <span></span>
+      </div>
+    </div>
+
+    {# <div class="field">
+      <div class="heading">
+        <label for="{{ tagName }}TextTransform">Capitalization</label>
+      </div>
+      <div class="slider-input input ltr">
+        <div class="select">
+          <select name="{{ tagName }}TextTransform" value="">
+            <option value="">None</option>
+            <option value="uppercase">Uppercase</option>
+            <option value="capitalize">Title Case</option>
+            <option value="lowercase">Lowercase</option>
+          </select>
+        </div>
+      </div>
+    </div> #}
+
+    {# <label id="{{ tagName }}-sample-text" class="{{ sampleClass }}">{{ sampleText }}</label> #}
+
+  </div>
+{% endmacro %}
+
+{% block details %}
+  <div class="content-pane">
+    <label id="h1-sample-text" class="sample-header" title="H1">{{ siteStyles.sampleHeader }}</label>
+    <label id="h2-sample-text" class="sample-header" title="H2">{{ siteStyles.sampleHeader }}</label>
+    <label id="h3-sample-text" class="sample-header" title="H3">{{ siteStyles.sampleHeader }}</label>
+    <label id="h4-sample-text" class="sample-header" title="H4">{{ siteStyles.sampleHeader }}</label>
+    <label id="h5-sample-text" class="sample-header" title="H5">{{ siteStyles.sampleHeader }}</label>
+    <label id="h6-sample-text" class="sample-header" title="H6">{{ siteStyles.sampleHeader }}</label>
+    <label id="p-sample-text" class="sample-paragraph" title="P">{{ siteStyles.sampleParagraph | nl2br }}</label>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  {{ csrfInput() }}
+  {{ actionInput('stylus/stylus/save-site-styles') }}
+  {{ redirectInput('stylus') }}
+  {% if siteStyles.id %}
+    {{ hiddenInput('siteStylesId', siteStyles.id) }}
+  {% endif %}
+
+  <div id="fields">
+
+    <div class="stylus-row">
+      <div class="stylus-col">
+        {{ forms.textField({
+            label: "Base Font Size" | t('app'),
+            id: 'baseFontSize',
+            name: 'baseFontSize',
+            type: 'number',
+            value: siteStyles.baseFontSize,
+            errors: siteStyles.getErrors('baseFontSize'),
+            size: 1,
+            first: true,
+            autofocus: true,
+            required: false
+        }) }}
+      </div>
+      <div class="stylus-col">
+        {{ forms.textField({
+            label: "Sample Header" | t('app'),
+            id: 'sampleHeader',
+            name: 'sampleHeader',
+            value: siteStyles.sampleHeader,
+            errors: siteStyles.getErrors('sampleHeader'),
+            required: false
+        }) }}
+
+        {{ forms.textareaField({
+            label: "Sample Paragraph" | t('app'),
+            id: 'sampleParagraph',
+            name: 'sampleParagraph',
+            rows: 3,
+            value: siteStyles.sampleParagraph,
+            errors: siteStyles.getErrors('sampleParagraph'),
+        }) }}
+      </div>
+    </div>
+
+    <hr>
+
+    {{ _self.tagFields('H1 Header Tag', 'h1', siteStyles.h1Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('H2 Header Tag', 'h2', siteStyles.h2Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('H3 Header Tag', 'h3', siteStyles.h3Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('H4 Header Tag', 'h4', siteStyles.h4Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('H5 Header Tag', 'h5', siteStyles.h5Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('H6 Header Tag', 'h6', siteStyles.h6Styles) }}
+
+    <hr>
+
+    {{ _self.tagFields('P Paragraph Tag', 'p', siteStyles.pStyles) }}
+
+  </div>
+
+{% endblock %}

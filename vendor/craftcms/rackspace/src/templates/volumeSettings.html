@@ -1,0 +1,71 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Username"|t('rackspace'),
+    id: 'username',
+    name: 'username',
+    value: volume.username,
+    errors: volume.getErrors('username'),
+    class: 'rackspace-username',
+    required: true
+}) }}
+
+{{ forms.textField({
+    label: "API Key"|t('rackspace'),
+    id: 'apiKey',
+    name: 'apiKey',
+    value: volume.apiKey,
+    errors: volume.getErrors('apiKey'),
+    class: 'racskspace-api-key',
+    required: true
+}) }}
+
+{{ forms.select({
+    id: 'region',
+    name: 'region',
+    options: {
+        'DFW': 'Dallas (DFW)',
+        'ORD': 'Chicago (ORD)',
+        'IAD': 'Virginia (IAD)',
+        'LON': 'London (LON)',
+        'HKG': 'Hong Kong (HKG)',
+        'SYD': 'Sydney (SYD)',
+    },
+    value: volume.region,
+    class: 'rackspace-region-select'
+}) }}
+
+{% set containerInput %}
+    <div class="flex">
+        {{ forms.select({
+            id: 'container',
+            name: 'container',
+            options: { (volume.container): volume.container },
+            value: volume.container,
+            readonly: true,
+            class: 'rackspace-container-select',
+            errors: volume.getErrors('container')
+        }) }}
+        <div class="btn rackspace-refresh-containers">{{ "Refresh"|t('rackspace') }}</div>
+        <div class="spinner hidden"></div>
+    </div>
+{% endset %}
+
+{{ forms.field({
+    label: "Container"|t('rackspace'),
+    id: 'container'
+}, containerInput) }}
+
+{{ forms.textField({
+    label: "Subfolder"|t('rackspace'),
+    instructions: "If you want to use a container’s subfolder as a Volume, specify the path to use here."|t('rackspace'),
+    id: 'subfolder',
+    class: 'ltr',
+    name: 'subfolder',
+    value: volume.subfolder,
+    errors: volume.getErrors('subfolder'),
+    required: false,
+    placeholder: "path/to/subfolder"|t('rackspace')
+}) }}
+
+{% do view.registerAssetBundle("craft\\rackspace\\RackspaceBundle") %}

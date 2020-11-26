@@ -1,0 +1,10 @@
+field: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+fieldLayouts:
+  1eaecd95-b712-436d-becb-be2f23037b92:
+    tabs:
+      -
+        name: Content
+        sortOrder: 1
+handle: customPageContent
+name: 'Custom Content'
+sortOrder: 5

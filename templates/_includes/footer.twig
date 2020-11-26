@@ -1,0 +1,49 @@
+{% set menu = craft.entries.section("footerNav").level(1) %}
+
+<footer data-title="Site Footer">
+	<div class="container">
+		<div class="row text-center text-lg-left">
+			<div class="col-lg-3">
+				<a href="/">
+					<img src="/../images/logo-placeholder.png" class="logo" alt="{{ systemName }}" title="{{ systemName }}">
+				</a>
+			</div>
+			<div class="col-lg-4 offset-lg-1">
+				<div class="footer-nav">
+					{% for item in menu.all() %}
+						<div>
+							<a itemprop="url" id="{{ item.slug }}-button" href="{{ item.menuEntry.one().url }}">{{ item.menuTitle }}</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="info">
+					{% if contactInfo.phoneNumber | length %}
+						<p>Phone: <a href="tel:{{ contactInfo.phoneNumber }}">{{ contactInfo.phoneNumber }}</a></p>
+					{% endif %}
+					{% if contactInfo.emailAddress %}
+						<p>Email: <a href="mailto:{{ contactInfo.emailAddress }}">{{ contactInfo.emailAddress }}</a></p>
+					{% endif %}
+				</div>
+				<div class="social">
+					{% if contactInfo.facebookLink | length %}
+						<a href="{{ contactInfo.facebookLink }}" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+					{% endif %}
+					{% if contactInfo.twitterLink | length %}
+						<a href="{{ contactInfo.twitterLink }}" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+					{% endif %}
+					{% if contactInfo.linkedinLink | length %}
+						<a href="{{ contactInfo.linkedinLink }}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+					{% endif %}
+					{% if contactInfo.pinterestLink | length %}
+						<a href="{{ contactInfo.pinterestLink }}" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
+					{% endif %}
+					{% if contactInfo.youtubeLink | length %}
+						<a href="{{ contactInfo.youtubeLink }}" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>

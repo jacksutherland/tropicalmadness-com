@@ -1,0 +1,56 @@
+field: 600bd547-60c5-4d24-a2d1-e7d6d18d7299
+fieldLayouts:
+  04ef4096-215b-43c0-937c-4962118dcab8:
+    tabs:
+      -
+        fields:
+          20a9d603-2cd6-4c07-97ee-9eddca6ff4fb:
+            required: true
+            sortOrder: 2
+          21d873c5-29b7-404c-b44a-c20de90782a0:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  20a9d603-2cd6-4c07-97ee-9eddca6ff4fb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: answer
+    instructions: ''
+    name: Answer
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  21d873c5-29b7-404c-b44a-c20de90782a0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: question
+    instructions: ''
+    name: Question
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

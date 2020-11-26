@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: fac5537d-5369-4ff9-89a9-d5e9afd69e6d
+handle: phoneNumber
+instructions: ''
+name: 'Phone Number'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

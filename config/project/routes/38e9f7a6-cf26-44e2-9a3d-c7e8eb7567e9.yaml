@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: 1
+template: locations/_index-router
+uriParts:
+  - locations/region/
+  -
+    - slug
+    - '[^\/]+'
+uriPattern: 'locations/region/<slug:[^\/]+>'

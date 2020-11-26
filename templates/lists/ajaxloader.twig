@@ -1,0 +1,23 @@
+{% set section = section is defined ? section : craft.app.request.getParam("section") %}
+{% set template = template is defined ? template : craft.app.request.getParam("template") %}
+{% set page = page is defined ? page : craft.app.request.getParam("page") %}
+{% set relation = relation is defined ? relation : craft.app.request.getParam("relation") %}
+
+{% if relation | length %}
+
+	{% set relatedEntry = craft.entries.slug(relation) %}
+	{% set entries = craft.entries.section(section).relatedTo(relatedEntry)
+		.orderBy('dateCreated asc')
+		.offset(page * lazyLoading.itemsPerPage)
+		.limit(lazyLoading.itemsPerPage) %}
+
+{% else %}
+
+	{% set entries = craft.entries.section(section)
+		.orderBy('dateCreated asc')
+		.offset(page * lazyLoading.itemsPerPage)
+		.limit(lazyLoading.itemsPerPage) %}
+
+{% endif %}
+
+{% include template with { entries: entries } %}

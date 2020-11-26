@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 53d1a5ed-a407-46f6-b9e2-ee7bac6c8932
+handle: briefDescription
+instructions: ''
+name: 'Brief Description'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '2'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

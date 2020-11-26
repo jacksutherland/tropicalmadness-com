@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: productTypes
+name: 'Product Types'
+propagationMethod: all
+siteSettings:
+  696b3395-9e92-4b02-9ba9-94c066f4348c:
+    enabledByDefault: true
+    hasUrls: true
+    template: products/_type
+    uriFormat: 'products/{slug}'
+structure:
+  maxLevels: 1
+  uid: 40542964-8624-4382-a379-113b22a9deff
+type: structure

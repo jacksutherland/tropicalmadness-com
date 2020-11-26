@@ -1,0 +1,42 @@
+{# 
+	To lazy load entries, all you have to do is add the include below with these parameters:
+	
+	section (the section name for the entries you're loading)
+	
+	template (the template that renders the entries)
+
+	relation (optional, slug of the entry's relation)
+
+	{% include 'lists/lazyloader' with { section: 'blogPost', template: 'blog/_posts' } %}
+ #}
+
+{% set relation = relation is defined ? relation : '' %}
+
+{% set checkUrl = checkUrl is defined ? checkUrl : '/lists/ajaxcontentcheck' %}
+
+{% if ajaxUrl is defined %}
+
+	{% set template = ajaxUrl %}
+	{% set section = '' %}
+
+{% else %}
+
+	{% set ajaxUrl = '/lists/ajaxloader' %}
+
+{% endif %}
+
+<div class="row align-items-stretch" data-lazyload 
+	data-section="{{ section }}" 
+	data-template="{{ template }}" 
+	data-relation="{{ relation }}" 
+	data-content="{{ ajaxUrl }}" 
+	data-check="{{ checkUrl }}">
+	{% include ajaxUrl with { section: section, template: template, page: 0, relation: relation } %}
+</div>
+{% if lazyLoading.loadType == 'loadMoreButton' %}
+	<div class="lazyload-loadmore">
+		<a href="load-more" class="button">Load More</a>
+	</div>
+{% else %}
+	<div class="lazyload-bottom"></div>
+{% endif %}

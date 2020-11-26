@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: d4da9aa3-e736-4939-98e0-4720693b0777
+handle: blogCategories
+instructions: ''
+name: 'Blog Categories'
+searchable: true
+settings:
+  entryTypes:
+    - 80a9c0eb-1793-4f4f-a3a8-defa54b8db91
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a category'
+  source: null
+  sources:
+    - 'section:4f3d4cca-252e-4cd9-bae0-6652ed7e73df'
+  targetSiteId: null
+  userGroups: null
+  users: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: nfourtythree\entriessubset\fields\EntriesSubsetField

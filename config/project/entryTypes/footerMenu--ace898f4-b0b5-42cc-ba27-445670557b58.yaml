@@ -1,0 +1,25 @@
+fieldLayouts:
+  b851f669-4ad2-474c-a1ab-9afe7cd59892:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b95489a0-bea1-4adc-b900-367d8a7e9142
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eeb28268-85d8-42d9-8003-f12addce086e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Menu
+        sortOrder: 1
+handle: footerMenu
+hasTitleField: true
+name: 'Footer Menu'
+section: 8fbaa33a-7908-44a2-b70e-b5de3e575941
+sortOrder: 1
+titleFormat: ''

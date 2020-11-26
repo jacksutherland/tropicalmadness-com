@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 06e6513a-237e-47b5-b14b-bfda674fa1ee
+handle: regions
+instructions: ''
+name: Regions
+searchable: true
+settings:
+  entryTypes:
+    - e735d166-4335-4acc-bee8-c4be0e497c3e
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'section:546bd69c-f169-4562-90d4-af0c7de5a5ea'
+  targetSiteId: null
+  userGroups: null
+  users: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: nfourtythree\entriessubset\fields\EntriesSubsetField

@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 2c2e05d8-c2c5-4522-8629-bd32d734df49
+handle: ogTitle
+instructions: ''
+name: 'OG Title'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

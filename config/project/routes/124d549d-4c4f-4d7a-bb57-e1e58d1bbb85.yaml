@@ -1,0 +1,10 @@
+siteUid: null
+sortOrder: 3
+template: products/_amp.html
+uriParts:
+  - products/
+  -
+    - slug
+    - '[^\/]+'
+  - /amp
+uriPattern: 'products/<slug:[^\/]+>/amp'

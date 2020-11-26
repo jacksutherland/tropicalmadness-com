@@ -1,0 +1,46 @@
+{
+    "name": "craftedagency/stylus",
+    "description": "Crafted Agency's plugin for base website design properties.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "stylus"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Crafted Agency",
+            "homepage": "https://craftedagency.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "firebase/php-jwt": "*"
+    },
+    "autoload": {
+        "psr-4": {
+          "craftedagency\\stylus\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Style Editor",
+        "handle": "stylus",
+        "developer": "Crafted Agency",
+        "developerUrl": "https://craftedagency.com",
+        "documentationUrl": "https://craftedagency.com/services/website-development",
+        "changelogUrl": "https://craftedagency.com/services/website-development",
+        "basePath": "../craftedagency/stylus/src",
+        "components": {
+            "zoomMeetingService": "craftedagency\\stylus\\services\\StylusService"
+        },
+        "class": "craftedagency\\stylus\\Stylus"
+    }
+}

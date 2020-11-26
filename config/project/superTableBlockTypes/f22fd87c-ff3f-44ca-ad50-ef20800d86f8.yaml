@@ -1,0 +1,83 @@
+field: 4dd991ed-e013-40d6-975d-5866096f678f
+fieldLayouts:
+  89140d63-c25b-4bd0-a3a5-b1c58090483d:
+    tabs:
+      -
+        fields:
+          1eb2d6b4-b46d-485d-8892-1cf6e3936fb2:
+            required: false
+            sortOrder: 3
+          20c0f2ad-1d13-4e52-87d0-2dba3cb324d6:
+            required: true
+            sortOrder: 1
+          2d4da001-0127-4201-a7b6-59aa94c98fe1:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  1eb2d6b4-b46d-485d-8892-1cf6e3936fb2:
+    contentColumnType: string
+    fieldGroup: null
+    handle: previewImage
+    instructions: 'This will be displayed prior to the video being played, as well as for playlist video thumbnails.'
+    name: 'Preview Image'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an Image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  20c0f2ad-1d13-4e52-87d0-2dba3cb324d6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoUrl
+    instructions: 'i.e. https://www.youtube.com/watch?v=6MFLQu9KowM or https://youtu.be/6MFLQu9KowM'
+    name: 'Video Url'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2d4da001-0127-4201-a7b6-59aa94c98fe1:
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoTitle
+    instructions: ''
+    name: 'Video Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

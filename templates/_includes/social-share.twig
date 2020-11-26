@@ -1,0 +1,13 @@
+<div class="blog-share">
+	<p><strong>Share: </strong>
+		<a class="facebook-share-button" onclick="ux.popup('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u={{ craft.app.request.absoluteUrl }}&display=popup&ref=plugin&src=share_button', 'Facebook', '550', '600'); return false;" href="/">
+	    	<i class="fab fa-facebook"></i>
+		</a>
+		<a class="twitter-share-button" onclick="ux.popup('https://twitter.com/intent/tweet?url={{ craft.app.request.absoluteUrl }}&text={{ entry.friendlyTitle }}', 'Twitter', '550', '269'); return false;" href="/">
+			<i class="fab fa-twitter"></i>
+		</a>
+		<a class="linkedin-share-button" onclick="ux.popup('https://www.linkedin.com/shareArticle?url={{ craft.app.request.absoluteUrl }}&title={{entry.friendlyTitle}}', 'Linkedin', '550', '400'); return false;" href="/">
+			<i class="fab fa-linkedin"></i>
+		</a>
+	</p>
+</div>

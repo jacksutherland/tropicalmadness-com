@@ -1,0 +1,150 @@
+/**
+ * Craft CMS 3.x Plugin
+ *
+ * Crafted Agency's plugin for base website design properties.
+ *
+ * @link      craftedagency.com
+ * @copyright Copyright (c) 2020 Crafted Agency
+ */
+
+#details-container {
+    -webkit-flex: 0 0 600px;
+    flex: 0 0 600px;
+    width: 600px;
+}
+ #details {
+    width: 600px;
+}
+
+.stylus-row {
+	display: flex;
+	justify-content: space-between;
+  	flex-wrap: wrap;
+}
+
+.stylus-col {
+    flex: 1;
+}
+
+.stylus-col:first-child {
+  flex: 0;
+  margin-right: 20px;
+}
+
+.peekaboo {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .5s ease-in-out;
+}
+
+.peekaboo.iseeyou {
+	max-height: 400px;
+}
+
+h2[data-peekaboo] {
+	cursor: pointer;
+}
+h2[data-peekaboo] svg {
+	width: 10px;
+    vertical-align: middle;
+    transform: rotate(-90deg);
+    margin-left: 10px;
+    fill: #3f4d5a;
+}
+h2[data-peekaboo].iseeyou svg {
+    transform: rotate(90deg);
+}
+h2[data-peekaboo]:hover {
+    color: #E12D39;
+}
+h2[data-peekaboo]:hover svg {
+    fill: #E12D39;
+}
+
+.slider-field {
+	margin: 16px 0;
+}
+
+.slider-field .heading {
+	margin-bottom: 0;
+}
+
+.slider-input input {
+	appearance: none;
+	width: 60%;
+	min-width: 200px;
+	height: 8px;
+	background: #E4EDF6;
+	border: solid 1px #D7DFE7;
+	outline: none;
+	transition: opacity .2s;
+	border-radius: 5px;
+	margin: 0 8px 0 0;
+}
+
+.slider-input input:hover {
+	opacity: 1;
+}
+
+.slider-input input::-webkit-slider-thumb {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	background: #E12D39;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.slider-input input::-moz-range-thumb {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	background: #E12D39;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.slider-input input::-webkit-slider-thumb:hover {
+	background: #d61f2b;
+}
+
+.slider-input input::-moz-range-thumb:hover {
+	background: #d61f2b;
+}
+
+.sample-header,
+.sample-paragraph {
+	margin-top: 15px;
+	display: block;
+	color: #66717B;
+	font-family: "Open Sans", sans-serif;
+	position: relative;
+}
+.sample-header:first-child {
+	margin-top: 0;
+}
+.sample-header:after {
+	content: attr(title);
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	opacity: 0.5;
+	margin-left: 10px;
+}
+
+@media only screen and (max-width: 1450px) {
+	#details-container {
+	    -webkit-flex: 0 0 500px;
+	    flex: 0 0 500px;
+	    width: 500px;
+	}
+	#details {
+	    width: 500px !important;
+	}
+}
+
+@media only screen and (max-width: 973px) {
+	#details-container,
+	#details {
+	    width: 100% !important;
+	}
+}

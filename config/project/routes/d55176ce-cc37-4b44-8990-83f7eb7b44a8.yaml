@@ -1,0 +1,10 @@
+siteUid: null
+sortOrder: 2
+template: blog/_amp.html
+uriParts:
+  - blog/
+  -
+    - slug
+    - '[^\/]+'
+  - /amp
+uriPattern: 'blog/<slug:[^\/]+>/amp'

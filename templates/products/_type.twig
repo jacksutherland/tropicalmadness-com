@@ -1,0 +1,23 @@
+{% extends "_layout" %}
+
+{# 
+	Template for the product types listing page
+#}
+
+{% block content %}
+
+	{% include "_includes/page-header" %}
+
+	{% include "_modules/page-module-top" %}
+
+	<div class="product-list">
+		<div class="container">
+
+			{% include 'lists/_lazyloader' with { section: 'products', template: 'products/_products', relation: entry.slug } %}
+
+		</div>
+	</div>
+
+	{% include "_modules/page-module-bottom" %}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+fieldLayouts:
+  92a20212-0b08-4290-872a-38284476d259:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: d45f6178-2985-48cc-8c2c-bc5fa4f42307
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ec369219-48be-4613-a41d-4cdcd5a68df0
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Page Header'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Page Sections'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 6ff83daa-c3e8-40cf-ae52-ada18d7d91b3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 38ddc493-2d39-48bc-a7d9-4112d20badd2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 9c0220b0-176d-4fe7-9500-dc1401aab110
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d922a4c3-0bdc-4495-93a8-f132f998c27f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: fb3fab94-bbeb-4eb9-bbcc-b47c8a8e68ad
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ae4c86d7-36b3-4565-86f0-9884f587ef0c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 48d27cfc-9d6c-4cbe-b05a-b5770d3231da
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b68881a1-d09d-48d0-a619-d4e62fabec61
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: productType
+hasTitleField: true
+name: 'Product Type'
+section: a569cb3d-5a53-4207-829f-e9185e223d45
+sortOrder: 2
+titleFormat: ''

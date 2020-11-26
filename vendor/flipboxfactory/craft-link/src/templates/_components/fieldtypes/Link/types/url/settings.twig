@@ -1,0 +1,31 @@
+{% extends "link/_components/fieldtypes/Link/types/settings" %}
+{% import "_includes/forms" as forms %}
+
+{% set textInstructions = textInstructions ?? 'Allow content manager enter text other than the url.'|t('link') %}
+
+{% block extras %}
+    {{ forms.lightswitchField({
+        label: 'Allow relative Url'|t('link'),
+        instructions: "Allow url to also start with '/'"|t('link'),
+        name: 'allowRelativeUrl',
+        id: 'allowRelativeUrl',
+        on: type.settings.allowRelativeUrl,
+    }) }}
+
+    {{ forms.textField({
+        label: 'Url Placeholder Text'|t('link'),
+        instructions: 'The text that will be shown if the url doesn’t have a value.',
+        name: 'placeholder',
+        id: 'placeholder',
+        value: type.settings.placeholder
+    }) }}
+{% endblock %}
+
+{% block notRequiredTextToggle %}
+    {{ forms.lightswitchField({
+        label: 'Use URL as default text'|t('link'),
+        name: 'useUrlAsDefaultText',
+        id: 'useUrlAsDefaultText',
+        on: type.settings.useUrlAsDefaultText,
+    }) }}
+{% endblock %}

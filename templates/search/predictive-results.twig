@@ -1,0 +1,20 @@
+{% extends 'search/_search-query' %}
+
+{% block search %}
+
+	{% set results = searchQuery.limit(5) %}
+
+	{% if results.count() > 0 %}    
+		<ul>
+			{% for result in results.all() %}
+				<li>
+					<a href="{{ result.url }}">
+						{{ result.friendlyTitle }}
+					</a>
+				</li>
+			{% endfor %}
+			<li><a href="/search?q={{ qry }}">View All Results</a></li>
+		</ul>
+	{% endif %}
+
+{% endblock %}

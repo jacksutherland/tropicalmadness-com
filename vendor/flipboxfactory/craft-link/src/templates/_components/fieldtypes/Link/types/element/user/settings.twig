@@ -1,0 +1,15 @@
+{% extends "link/_components/fieldtypes/Link/types/element/settings" %}
+{% import "_includes/forms" as forms %}
+
+{% block extras %}
+    {{ parent() }}
+
+    {{ forms.textField({
+        label: "Uri"|t('link'),
+        instructions: "Enter the link uri string <small class='light' style='font-size: small'>(you may reference User element attributes within brackets. Ex: {email}, {id}, {username})</small>"|t('link'),
+        id: 'uri',
+        name: 'uri',
+        value: type.uri,
+        errors: type.getErrors('uri')
+    }) }}
+{% endblock %}

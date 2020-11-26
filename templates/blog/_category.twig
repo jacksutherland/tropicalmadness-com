@@ -1,0 +1,23 @@
+{% extends "_layout" %}
+
+{# 
+	Template for the blog category listing page
+#}
+
+{% block content %}
+
+	{% include "_includes/page-header" %}
+
+	<section class="blog-list">
+		<div class="container">
+
+			{% include "_modules/page-module-top" %}
+
+			{% include 'lists/_lazyloader' with { section: 'blogPost', template: 'blog/_posts', relation: entry.slug } %}
+
+			{% include "_modules/page-module-bottom" %}
+
+		</div>
+	</section>
+
+{% endblock %}

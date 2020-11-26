@@ -1,0 +1,51 @@
+{% extends "_layout" %}
+
+{# 
+	Template for the blog detail page
+#}
+
+{% block content %}
+
+	<div class="blog-post">
+		<div class="hero module">
+			<div class="container">
+				<div class="row pb-4">
+				    <div class="col-lg-6 text-center text-lg-left">
+
+				    	<h1>{{ entry.friendlyTitle }}</h1>
+
+				    	<div class="blog-categories">
+							<p><strong>Categories: </strong>
+								{% for cat in entry.blogCategories %}
+										{% if loop.index > 1 %}<span> | </span>{% endif %}
+										<a href="{{ cat.url }}">{{ cat.friendlyTitle }}</a>
+								{% endfor %}
+							</p>
+						</div>
+
+						<p class="blog-author"><strong>Author: </strong>{{ entry.author }}</p>
+						<p class="post-date"><strong>Post Date: </strong>{{ entry.postDate | date("F d, Y") }}</p>
+
+				        {% include '_includes/social-share' %}
+
+					</div>
+					<div class="col-lg-6 text-center text-lg-right">
+						{% if entry.featuredImage.count > 0 %}
+							<img src="{{ entry.featuredImage.one().url("zPattern") }}" alt="">
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<div class="blog-entry">
+							{{ entry.richText }}
+						</div>
+				    </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+fieldLayouts:
+  da806a12-9231-4ef8-b477-e076710de596:
+    tabs:
+      -
+        fields:
+          4422cd85-30d4-453a-a618-637ddf7ed0a9:
+            required: false
+            sortOrder: 2
+          bdbf86e2-8615-469f-8db7-2d96b9bd1128:
+            required: false
+            sortOrder: 1
+        name: 'Lazy Loading'
+        sortOrder: 1
+handle: lazyLoading
+name: 'Lazy Loading'

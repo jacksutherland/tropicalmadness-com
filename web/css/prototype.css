@@ -1,0 +1,39 @@
+.prototype .prototype-module-note {
+  display: none; }
+
+.prototype .prototype-trigger {
+  position: fixed;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer; }
+  .prototype .prototype-trigger:hover svg {
+    fill: #c4c4c4; }
+  .prototype .prototype-trigger svg {
+    fill: #DDDDDD; }
+
+.prototype.prototype-edit-mode .prototype-trigger svg {
+  fill: #F8EE51; }
+
+.prototype.prototype-edit-mode .prototype-trigger:hover svg {
+  fill: #f6e920; }
+
+.prototype.prototype-edit-mode header, .prototype.prototype-edit-mode footer, .prototype.prototype-edit-mode .module, .prototype.prototype-edit-mode .page-header .header-image, .prototype.prototype-edit-mode .page-header .text-header {
+  transition: box-shadow 0.25s;
+  position: relative; }
+  .prototype.prototype-edit-mode header:hover, .prototype.prototype-edit-mode footer:hover, .prototype.prototype-edit-mode .module:hover, .prototype.prototype-edit-mode .page-header .header-image:hover, .prototype.prototype-edit-mode .page-header .text-header:hover {
+    cursor: url("/images/sticky-note.svg") 20 20, grab;
+    box-shadow: inset 0px 0px 1px 7px #DDDDDD;
+    box-sizing: border-box; }
+  .prototype.prototype-edit-mode header .prototype-module-note, .prototype.prototype-edit-mode footer .prototype-module-note, .prototype.prototype-edit-mode .module .prototype-module-note, .prototype.prototype-edit-mode .page-header .header-image .prototype-module-note, .prototype.prototype-edit-mode .page-header .text-header .prototype-module-note {
+    display: inline;
+    position: absolute;
+    z-index: 1010;
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px; }
+    .prototype.prototype-edit-mode header .prototype-module-note svg, .prototype.prototype-edit-mode footer .prototype-module-note svg, .prototype.prototype-edit-mode .module .prototype-module-note svg, .prototype.prototype-edit-mode .page-header .header-image .prototype-module-note svg, .prototype.prototype-edit-mode .page-header .text-header .prototype-module-note svg {
+      fill: #F8EE51; }

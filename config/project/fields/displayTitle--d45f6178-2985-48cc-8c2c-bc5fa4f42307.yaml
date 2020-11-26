@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 53d1a5ed-a407-46f6-b9e2-ee7bac6c8932
+handle: displayTitle
+instructions: 'The title you want displayed on the site.'
+name: 'Display Title'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

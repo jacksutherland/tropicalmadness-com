@@ -1,0 +1,40 @@
+{
+  "require": {
+    "craftcms/cms": "3.5.15.1",
+    "craftcms/rackspace": "^1.1",
+    "craftcms/redactor": "2.8.3",
+    "craftedagency/stylus": "^1.0",
+    "ether/seo": "3.6.6",
+    "flipboxfactory/craft-link": "^1.1",
+    "lukeyouell/craft-sentry": "^1.5",
+    "nfourtythree/entriessubset": "1.2.3",
+    "verbb/super-table": "2.6.3",
+    "vlucas/phpdotenv": "^3.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  },
+  "repositories": [
+    {
+        "type": "path",
+        "url": "craftedagency/stylus/",
+        "options": {
+            "symlink": true
+        }
+    }
+  ]
+}

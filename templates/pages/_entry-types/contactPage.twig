@@ -1,0 +1,51 @@
+<div class="container mt-5 mb-5">
+	<div id="success-message" class="form-success">
+		{{ entry.successMessage }}
+	</div>
+	<form class="form" method="post" action="/forms/contact.php" data-submit="ajax" data-message="#success-message"{% if entry.successEntry.count > 0 %} data-messageurl="{{ entry.successEntry.one().url }}"{% endif %}>
+		<input type="hidden" name="notification" value="{{ entry.notificationEmail }}">
+		<input type="hidden" name="honeypot" value="">
+		<div class="row">
+			<div class="col-lg-6">
+				<label for="firstname">First Name</label>
+				<input id="firstname" name="firstname" type="text" data-validation="required" value="">
+			</div>
+			<div class="col-lg-6">
+				<label for="lastname">Last Name</label>
+				<input id="lastname" name="lastname" type="text" data-validation="required" value="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email">
+			</div>
+			<div class="col-lg-6">
+				<label for="phone">Phone</label>
+				<input id="phone" name="phone" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<label for="ddl">Drop Down for Testing</label>
+				<select name="ddl" data-validation="required">
+					<option value="">Select an option...</option>
+					<option value="val1">Drop down value 1</option>
+					<option value="val2">Drop down value 2</option>
+					<option value="val3">Drop down value 3</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="message">Message</label>
+				<textarea id="message" name="message"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<button>Submit</button>
+			</div>
+		</div>
+	</form>
+</div>

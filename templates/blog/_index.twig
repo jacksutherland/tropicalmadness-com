@@ -1,0 +1,34 @@
+{# 
+	Template for the primary blog listing page
+	Inherited from pages/_entry-types/blogListing.twig
+#}
+
+{% set categories = craft.entries.section("blogCategories") %}
+
+<section class="blog-list">
+	<div class="container">
+
+		{% include "_modules/page-module-top" %}
+
+		<div class="blog-categories">
+			<strong>Categories:</strong>
+			<ul>
+				{% for cat in categories.all() %}
+					<li>
+						{% if loop.index > 1 %}
+							<span> | </span>
+						{% endif %}
+						<a href="{{ cat.url }}">
+							{{ cat.friendlyTitle }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		{% include 'lists/_lazyloader' with { section: 'blogPost', template: 'blog/_posts' } %}
+
+		{% include "_modules/page-module-bottom" %}
+
+	</div>
+</section>

@@ -1,0 +1,18 @@
+{% set qry = craft.request.getQuery('q') %}
+{% if qry == null %}
+	{% set qry = craft.request.getQuery("relation") %}
+{% endif %}
+{% if qry == null %}
+	{% set qry = '' %}
+{% endif %}
+
+{% set searchQuery = craft.entries()
+    .section(['blogPost', 'products', 'pages'])
+    .search({
+        query: qry,
+        subLeft: true
+    }) %}
+{# subLeft: true enables fuzzy search #}
+
+{% block search %}
+{% endblock %}

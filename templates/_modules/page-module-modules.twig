@@ -1,0 +1,124 @@
+{% switch module.type %}
+
+	{% case "richText" %}
+		<div class="rich-text module" data-title="Rich Text Module">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						{{ module.richText }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% case "zPattern" %}
+		<div class="z-pattern module" data-title="Z-Pattern Module">
+			<div class="container">
+				{% set row = module.row %}
+				{% if row.count > 0 %}
+					{% for item in row.all() %}
+						<div class="row align-items-center justify-content-between pb-5">
+							{% if item.imageAlignment == "left" %}
+								<div class="col-lg-6 order-1">
+									{% if item.image.count > 0 %}
+										{% if item.imageSize == "cover" %}
+											<div class="image-wrap" style="background-image: url('{{ item.image.one().url("zPattern") }}');"></div>
+										{% else %}
+											<img class="full-image" src="{{ item.image.one().url("zPattern") }}" alt="{{ item.image.one().title }}">
+										{% endif %}
+									{% endif %}
+								</div>
+							{% endif %}
+							<div class="col-lg-6 order-2 order-lg-1">
+								{{ item.text }}
+								{% if item.ctaButton %}
+									<a href="{{ item.ctaButton.url }}" target="{{ item.ctaButton.target }}"{% if item.ctaStyle == "button" %} class="button"{% endif %}>{{ item.ctaButton.text }}</a>
+								{% endif %}
+							</div>
+							{% if item.imageAlignment == "right" %}
+								<div class="col-lg-6 order-1 order-lg-2">
+									{% if item.image.count > 0 %}
+										{% if item.imageSize == "cover" %}
+											<div class="image-wrap" style="background-image: url('{{ item.image.one().url("zPattern") }}');"></div>
+										{% else %}
+											<img class="full-image" src="{{ item.image.one().url("zPattern") }}" alt="{{ item.image.one().title }}">
+										{% endif %}
+									{% endif %} 
+								</div>
+							{% endif %}
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+
+		{% case "accordion" %}
+			<div class="accordion module" data-title="Accordion Module">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							{% if module.headline | length %}
+								<h3>{{ module.headline }}</h3>
+							{% endif %}
+						</div>
+						<div class="col-12">
+							{% if module.questions.count > 0 %}
+								{% for q in module.questions.all() %}
+									<div class="accordion-wrap">
+										<div class="accordion-trigger">
+											<h4>{{ q.question }}</h4>
+											<i class="fa fa-angle-down fa-2x"></i>
+										</div>
+										<div class="accordion-info">
+											{{ q.answer }}
+										</div>
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		{% case "videos" %}
+			<div class="videos module" data-title="Videos Module">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-12 col-xl-8 col">
+							{% if module.headline | length %}
+								<h3>{{ module.headline }}</h3>
+							{% endif %}
+							{% set initialVideo = module.videos.one() %}
+							<div class="video-player" data-url="{{ initialVideo.videoUrl }}" data-id="{{ module.id }}">
+								<div class="video-cover"{% if initialVideo.previewImage.count %} style="background-image: url({{ initialVideo.previewImage.one().url }})"{% endif %}>
+									<h5 class="video-title">{{ initialVideo.videoTitle }}</h5>
+									<i class="fas fa-play"></i>
+								</div>
+								<div id="video-{{ module.id }}" class="video">video</div>
+							</div>
+							{% if module.videos.count > 1 %}
+								<div class="video-playlist">
+									<div class="row">
+										{% for video in module.videos.all() %}
+											<div class="col-6 col-sm-4 col-md-3">
+												<a id="thumbnail-{{ video.id }}" class="video-thumbnail{% if video.id == initialVideo.id %} active{% endif %}"
+													data-url="{{ video.videoUrl }}" data-title="{{ video.videoTitle }}" title="{{ video.videoTitle }}"
+													{% if video.previewImage.count %} 
+														data-image="{{ video.previewImage.one().url }}" 
+														style="background-image: url({{ video.previewImage.one().url }})"
+													{% else %}
+														data-image=""
+													{% endif %}>
+												</a>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+{% endswitch %}

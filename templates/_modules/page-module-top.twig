@@ -1,0 +1,17 @@
+{# 
+	This is the page module content positioned above the page's custom content
+#}
+
+{% set showModule = true %}
+
+{% for module in entry.pageModule.all() %}
+
+	{% if module.type == "customPageContent" %}
+		{% set showModule = false %}
+	{% endif %}
+
+	{% if showModule %}
+		{% include "_modules/page-module-modules" %}
+	{% endif %}
+
+{% endfor %}

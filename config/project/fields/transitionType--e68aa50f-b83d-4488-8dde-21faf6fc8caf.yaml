@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 3b9444c1-4313-4c03-b79b-b234d2a1c99d
+handle: transitionType
+instructions: ''
+name: 'Transition Type'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Fade
+        -
+          - value
+          - transition-fade
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Slide
+        -
+          - value
+          - transition-slide
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

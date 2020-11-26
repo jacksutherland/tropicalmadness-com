@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 4e1ff984-18ac-4f2c-9a1f-501262dae362
+handle: loadType
+instructions: ''
+name: 'Load Type'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Infinite Scrolling'
+        -
+          - value
+          - infiniteScrolling
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Load More Button'
+        -
+          - value
+          - loadMoreButton
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

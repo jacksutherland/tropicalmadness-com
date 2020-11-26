@@ -1,0 +1,6 @@
+{% extends 'search/_search-query' %}
+{% set page = craft.app.request.getParam("page") %}
+{% block search %}
+{% set results = searchQuery.offset(page * lazyLoading.itemsPerPage) %}
+{{ results.exists() }}
+{% endblock %}

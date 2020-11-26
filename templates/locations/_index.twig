@@ -1,0 +1,54 @@
+{# 
+	Template for the locations listing page
+
+	Inherited from pages/_entry-types/locationListing.twig
+
+	Template scripts for this are located at locations/_scripts.twig
+#}
+
+{% set regions = craft.entries.section("regions").type("region") %}
+{% set region = craft.app.request.getSegment(2) == 'region' ? craft.app.request.getSegment(3) : "" %}
+
+<div class="locations">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-5 col-xl-4">
+				<div class="location-list">
+					{% if regions.count %}
+						<div>
+							<select id="location-regions">
+								<option value="">
+									All Regions
+								</option>
+								{% for r in regions.all() %}
+									<option value="{{ r.slug }}"{% if region == r.slug %} selected="selected"{% endif %}>
+										{{ r.friendlyTitle }}
+									</option>
+								{% endfor %}
+							</select>
+						</div>
+					{% endif %}
+					<div>
+						<input id="locations-address" type="text" placeholder="City or Postal Code">
+					</div>
+					<div>
+						<select id="locations-radius">
+							<option value="16">10 miles</option>
+							<option value="160">100 miles</option>
+							<option value="804" selected="" data-default="">500 miles</option>
+							<option value="1609">1000 miles</option>
+						</select>
+					</div>
+					<ul id="locations-ul">
+						{% include 'locations/location-list' with { region: region } %}
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-7 col-xl-8">
+				<div id="locations-map">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

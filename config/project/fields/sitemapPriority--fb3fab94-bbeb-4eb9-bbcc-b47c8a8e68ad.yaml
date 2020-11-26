@@ -1,0 +1,133 @@
+contentColumnType: string
+fieldGroup: 2c2e05d8-c2c5-4522-8629-bd32d734df49
+handle: sitemapPriority
+instructions: 'Set to 0.5 if none selected'
+name: 'Sitemap Priority'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '1.0'
+        -
+          - value
+          - '1.0'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.9'
+        -
+          - value
+          - '0.9'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.8'
+        -
+          - value
+          - '0.8'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.7'
+        -
+          - value
+          - '0.7'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.6'
+        -
+          - value
+          - '0.6'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.5'
+        -
+          - value
+          - '0.5'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '0.4'
+        -
+          - value
+          - '0.4'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.3'
+        -
+          - value
+          - '0.3'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.2'
+        -
+          - value
+          - '0.2'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.1'
+        -
+          - value
+          - '0.1'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '0.0'
+        -
+          - value
+          - '0.0'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,24 @@
+{% set stylus = craft.stylus.getSiteStyles() %}
+
+{% macro tagStyles(stylus, tagName) %}
+{{ tagName }} {
+    {% for prop, val in stylus[tagName ~ 'Styles'] %}
+        {{ prop }}: {{ val }};
+    {% endfor %}
+}
+{% endmacro %}
+
+{% if stylus != null %}
+    <style>
+        body {
+            font-size: {{ stylus.baseFontSize }};
+        }
+       {{ _self.tagStyles(stylus, 'h1') }}
+       {{ _self.tagStyles(stylus, 'h2') }}
+       {{ _self.tagStyles(stylus, 'h3') }}
+       {{ _self.tagStyles(stylus, 'h4') }}
+       {{ _self.tagStyles(stylus, 'h5') }}
+       {{ _self.tagStyles(stylus, 'h6') }}
+       {{ _self.tagStyles(stylus, 'p') }}
+    </style>
+{% endif %}

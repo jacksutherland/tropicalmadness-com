@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: footerNav
+name: 'Footer Menu'
+propagationMethod: all
+siteSettings:
+  696b3395-9e92-4b02-9ba9-94c066f4348c:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: ''
+structure:
+  maxLevels: 1
+  uid: 16198abe-97f7-4370-9f09-fb85b6aa3a2a
+type: structure

@@ -1,0 +1,43 @@
+{
+  "name": "craftcms/rackspace",
+  "description": "Rackspace Cloud Files integration for Craft CMS",
+  "version": "1.1.0",
+  "type": "craft-plugin",
+  "keywords": [
+    "cms",
+    "craftcms",
+    "rackspace",
+    "opencloud",
+    "openstack",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/rackspace/issues?state=open",
+    "source": "https://github.com/craftcms/rackspace",
+    "docs": "https://github.com/craftcms/rackspace",
+    "rss": "https://github.com/craftcms/rackspace/commits/master.atom"
+  },
+  "require": {
+    "craftcms/cms": "^3.1.0",
+    "league/flysystem-rackspace": "1.0.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\rackspace\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Rackspace Cloud Files",
+    "handle": "rackspace",
+    "changelogUrl": "https://raw.githubusercontent.com/craftcms/rackspace/master/CHANGELOG.md",
+    "downloadUrl": "https://github.com/craftcms/rackspace/archive/master.zip"
+  }
+}

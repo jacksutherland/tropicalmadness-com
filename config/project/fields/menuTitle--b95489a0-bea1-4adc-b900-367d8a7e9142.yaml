@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 03da3170-496f-4021-b0f6-39cb6d0097f0
+handle: menuTitle
+instructions: ''
+name: 'Menu Title'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

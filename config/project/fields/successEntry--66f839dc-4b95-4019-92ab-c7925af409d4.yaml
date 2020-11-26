@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: fac5537d-5369-4ff9-89a9-d5e9afd69e6d
+handle: successEntry
+instructions: 'Select a thank you page, or if no page is selected, the Success Message will display.'
+name: 'Success Entry'
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'section:f960fa3a-d667-4070-80be-57b945d9d897'
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

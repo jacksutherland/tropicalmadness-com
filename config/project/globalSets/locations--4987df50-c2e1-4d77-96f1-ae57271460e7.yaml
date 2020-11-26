@@ -1,0 +1,12 @@
+fieldLayouts:
+  8c0c518f-db3f-4baa-abb1-fa48345385bb:
+    tabs:
+      -
+        fields:
+          9fcf55f9-d949-42e6-879f-f9c67d9f34c3:
+            required: false
+            sortOrder: 1
+        name: Locations
+        sortOrder: 1
+handle: locations
+name: Locations

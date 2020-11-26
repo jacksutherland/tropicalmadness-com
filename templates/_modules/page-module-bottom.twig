@@ -1,0 +1,19 @@
+{#
+	This is the page module content positioned underneath the page's custom content
+
+	This will never show if there are no custom content modules in the matrix
+#}
+
+{% set showModule = false %}
+
+{% for module in entry.pageModule.all() %}
+
+	{% if module.type == "customPageContent" %}
+		{% set showModule = true %}
+	{% endif %}
+
+	{% if showModule %}
+		{% include "_modules/page-module-modules" %}
+	{% endif %}
+
+{% endfor %}

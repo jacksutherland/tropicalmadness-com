@@ -1,0 +1,25 @@
+fieldLayouts:
+  01f53eed-b221-4ce4-9721-6d5f66de3ad4:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b95489a0-bea1-4adc-b900-367d8a7e9142
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eeb28268-85d8-42d9-8003-f12addce086e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Menu
+        sortOrder: 1
+handle: topNav
+hasTitleField: true
+name: 'Main Menu'
+section: 00ffddbc-0e2f-4b1e-89e8-1eb4fbe2c06b
+sortOrder: 1
+titleFormat: ''

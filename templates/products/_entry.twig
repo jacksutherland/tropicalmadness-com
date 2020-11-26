@@ -1,0 +1,67 @@
+{% extends "_layout" %}
+
+{% block scripts %}
+	<script>
+		dom.onLoad(function()
+		{
+			ux.imageviewer.imageId = "active-image";
+			ux.imageviewer.zoomId = "image-zoom";
+			ux.imageviewer.init();
+		});
+	</script>
+{% endblock %}
+
+{% block content %}
+
+	<div class="hero module">
+		<div class="container">
+			<div class="row pb-4">
+			    <div class="col-lg-5 text-center text-lg-left">
+			    	<h1>{{ entry.friendlyTitle }}</h1>
+
+					{% if entry.productType.count > 0 %}
+						<p><strong>Product Type: </strong><a href="{{ entry.productType.one().url }}">{{ entry.productType.one().friendlyTitle }}</a></p>
+					{% endif %}
+
+					{% if entry.productPrice | length != "" %}
+						<p><strong>Price: </strong>{{entry.productPrice}}</p>
+					{% endif %}
+
+			        {% include '_includes/social-share' %}	
+
+				</div>
+				<div class="col-lg-7 text-center text-lg-right">
+					{% if entry.productImages.count > 0 %}
+						{% set activeImage = entry.productImages.one() %}
+						<div class="image-viewer">
+							<div class="active-image-container">
+								<div class="active-image">
+									<img id="active-image" src="{{ activeImage.url("zoom") }}" alt="">
+									<div id="image-zoom" class="image-zoom"></div>
+								</div>
+							</div>
+							{% if entry.productImages.count > 1 %}
+								<ul class="image-thumbnails">
+									{% for thumbnail in entry.productImages.all() %}
+										<li style="background-image: url({{ thumbnail.url("thumbnail") }})" 
+											data-image="{{ thumbnail.url("zoom") }}"{% if activeImage.id == thumbnail.id %} class="active"{% endif %}>
+										</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="blog-entry">
+						{{ entry.richText }}
+					</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

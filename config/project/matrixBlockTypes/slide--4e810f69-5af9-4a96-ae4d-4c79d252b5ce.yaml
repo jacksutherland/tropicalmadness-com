@@ -1,0 +1,402 @@
+field: ec369219-48be-4613-a41d-4cdcd5a68df0
+fieldLayouts:
+  33db4478-c0d1-43b0-a69d-4d9880283a35:
+    tabs:
+      -
+        fields:
+          049e3f23-1983-4ffa-8fb2-15d75967acde:
+            required: false
+            sortOrder: 7
+          2b066bc1-06e4-471c-83ce-e7caf13223c7:
+            required: false
+            sortOrder: 3
+          59305466-3d15-4756-9649-b67f8291a4f1:
+            required: true
+            sortOrder: 1
+          67956fd2-7005-407a-b3db-f0fc864f4b67:
+            required: false
+            sortOrder: 6
+          8f31a196-3a8c-4dae-aceb-20d1580347f4:
+            required: false
+            sortOrder: 4
+          cb296782-6578-47e6-948c-72ee6d315a60:
+            required: false
+            sortOrder: 5
+          d0ad000d-f972-40df-9a5f-a009b09122d6:
+            required: false
+            sortOrder: 8
+          daec9c72-4ba3-49a4-aecd-fa33836af2d5:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  049e3f23-1983-4ffa-8fb2-15d75967acde:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroText
+    instructions: ''
+    name: 'Hero Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2b066bc1-06e4-471c-83ce-e7caf13223c7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mobileHeroImage
+    instructions: ''
+    name: 'Mobile Hero Image'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  59305466-3d15-4756-9649-b67f8291a4f1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroImage
+    instructions: ''
+    name: 'Hero Image'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  67956fd2-7005-407a-b3db-f0fc864f4b67:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroTitle
+    instructions: ''
+    name: 'Hero Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8f31a196-3a8c-4dae-aceb-20d1580347f4:
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroImageFocalPoint
+    instructions: ''
+    name: 'Hero Image Focal Point'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - bottom
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  cb296782-6578-47e6-948c-72ee6d315a60:
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroImageOverlay
+    instructions: 'Turning this on will darken the image, to make text more readable on bright images.'
+    name: 'Hero Image Overlay'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - overlay-none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - overlay-light
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - overlay-medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - overlay-dark
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  d0ad000d-f972-40df-9a5f-a009b09122d6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroCta
+    instructions: ''
+    name: 'Hero CTA'
+    searchable: true
+    settings:
+      selectionLabel: ' -- Select link type --'
+      types:
+        __assoc__:
+          -
+            - ZbgcL9b3
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Entry
+                -
+                  - label
+                  - Entry
+                -
+                  - showTarget
+                  - ''
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - sources
+                  -
+                    - 'section:4f3d4cca-252e-4cd9-bae0-6652ed7e73df'
+                    - 'section:4661a716-33f4-4159-94e5-d3240d192e6f'
+                    - singles
+                    - 'section:4806c5ad-88d9-43d3-abea-d6a110289b8e'
+                    - 'section:a569cb3d-5a53-4207-829f-e9185e223d45'
+                    - 'section:546bd69c-f169-4562-90d4-af0c7de5a5ea'
+                    - 'section:f960fa3a-d667-4070-80be-57b945d9d897'
+                -
+                  - targetSiteId
+                  - null
+                -
+                  - viewMode
+                  - null
+                -
+                  - selectionLabel
+                  - 'Select an entry'
+                -
+                  - localizeRelations
+                  - false
+          -
+            - E9iBtj38
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Asset
+                -
+                  - label
+                  - Asset
+                -
+                  - showTarget
+                  - '1'
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - sources
+                  -
+                    - 'folder:5d0a8a2c-ce22-40d3-b632-d9a8b9b0db76'
+                -
+                  - targetSiteId
+                  - null
+                -
+                  - viewMode
+                  - null
+                -
+                  - selectionLabel
+                  - 'Select an asset'
+                -
+                  - localizeRelations
+                  - false
+          -
+            - DSJcpcLx
+            -
+              __assoc__:
+                -
+                  - class
+                  - flipbox\craft\link\types\Url
+                -
+                  - label
+                  - Url
+                -
+                  - showTarget
+                  - '1'
+                -
+                  - allowText
+                  - '1'
+                -
+                  - requireText
+                  - '1'
+                -
+                  - placeholder
+                  - ''
+                -
+                  - useUrlAsDefaultText
+                  - '1'
+                -
+                  - allowRelativeUrl
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: flipbox\craft\link\fields\Link
+  daec9c72-4ba3-49a4-aecd-fa33836af2d5:
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroVideo
+    instructions: ''
+    name: 'Hero Video'
+    searchable: true
+    settings:
+      allowedKinds:
+        - video
+      defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: slide
+name: Slide
+sortOrder: 1

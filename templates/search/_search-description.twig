@@ -1,0 +1,9 @@
+{% extends 'search/_search-query' %}
+
+{% block search %}
+	{% if searchQuery.count() == 0 %}
+		<h3>No search results found for "{{ qry }}"</h3>
+	{% else %}
+		<h3>Search results for "{{ qry }}"</h3>
+	{% endif %}
+{% endblock %}

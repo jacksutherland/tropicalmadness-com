@@ -1,0 +1,62 @@
+{% extends 'search/_search-query' %}
+
+{% set page = page is defined ? page : craft.app.request.getParam("page") %}
+
+{% block search %}
+
+	{% set results = searchQuery.offset(page * lazyLoading.itemsPerPage).limit(lazyLoading.itemsPerPage) %}
+
+	{% for result in results.all() %}
+		{% set section  = 'Page' %}
+		{% set desc  = '' %}
+		{% set icon  = '' %}
+		{% set image  = null %}
+		{% switch result.section.handle %}
+			{% case 'blogPost' %}
+				{% set section  = 'Blog' %}
+				{% set icon  = '<i class="fas fa-blog"></i>' %}
+				{% set desc  = result.briefDescription %}
+				{% set image  = result.featuredImage %}
+			{% case 'products' %}
+				{% set section  = 'Product' %}
+				{% set icon  = '<i class="fas fa-box-open"></i>' %}
+				{% set desc  = result.briefDescription %}
+				{% set image  = result.productImages %}
+			{% default %}
+				{% set icon  = '<i class="fas fa-file-alt"></i>' %}
+				{% if result.headerModule and result.headerModule.count() > 0 %}
+					{% if result.headerModule.one().heroText | trim | length > 0 %}
+						{% set desc  = result.headerModule.one().heroText %}
+					{% endif %}
+					{% if result.headerModule.one().heroImage.count > 0 %}
+						{% set image = result.headerModule.one().heroImage %}
+					{% endif %}
+				{% endif %}
+		{% endswitch %}
+		<article>
+			<div class="row">
+				<div class="d-none d-md-block col-md-3 col-xl-2">
+					{% if image is not null and image.count > 0 %}
+						<a href="{{ result.url }}" class="result-image">
+							<img src="{{ image.one().url }}" alt="{{ result.friendlyTitle }}">
+						</a>
+					{% else %}
+						<a href="{{ result.url }}" class="result-icon">
+							{{ icon | raw }}
+						</a>
+					{% endif %}
+				</div>
+				<div class="col-12 col-md-9 col-xl-10">
+					<div>
+						<small>{{ section }}</small>
+					</div>
+					<a href="{{ result.url }}"><strong>{{ result.friendlyTitle }}</strong></a>
+					{% if desc | trim | length > 0 %}
+						<p>{{ desc }}</p>
+					{% endif %}
+				</div>
+			</div>
+		</article>
+	{% endfor %}
+
+{% endblock %}

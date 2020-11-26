@@ -1,0 +1,57 @@
+{% import "_includes/forms" as forms %}
+
+{% macro configWarning(plugin, setting) -%}
+  {% set setting = '<code>' ~ setting ~ '</code>' %}
+  {{ 'This is being overridden by the {setting} config setting in your {file} config file.'|t(plugin.handle, {
+      setting: setting,
+      file:    plugin.handle ~ '.php'
+  })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+{{ forms.lightswitchField({
+    first: true,
+    label: "Enabled"|t(plugin.handle),
+    instructions: "If disabled, the plugin will not report exceptions to Sentry."|t(plugin.handle),
+    id: 'enabled',
+    name: 'enabled',
+    on: settings.enabled,
+    disabled: 'enabled' in overrides,
+    warning: 'enabled' in overrides ? configWarning(plugin, 'enabled')
+}) }}
+
+{{ forms.autosuggestField({
+    required: true,
+    label: "Client Key (DSN)"|t(plugin.handle),
+    instructions: "To send data to Sentry you will need to configure an SDK with a client key which can be found in your [project settings](https://sentry.io/settings/) underneath 'Client Keys (DSN)'."|t(plugin.handle),
+    id: 'clientDsn',
+    suggestEnvVars: true,
+    name: 'clientDsn',
+    placeholder: 'https://55bb06663931567d9ee5bed445c6388a@sentry.io/289748',
+    value: settings.clientDsn,
+    warning: 'clientDsn' in overrides ? configWarning(plugin, 'clientDsn')
+}) }}
+
+{{ forms.autosuggestField({
+    required: true,
+    label: "Environment"|t(plugin.handle),
+    instructions: "The environment value provided to Sentry as additional exception data (defaults to Craft's environment)"|t(plugin.handle),
+    id: 'environment',
+    suggestEnvVars: true,
+    name: 'environment',
+    placeholder: settings.environment,
+    value: settings.environment,
+    warning: 'environment' in overrides ? configWarning(plugin, 'environment')
+}) }}
+
+{{ forms.textField({
+    label: "Excluded Status Codes"|t(plugin.handle),
+    instructions: "Comma separated list of HTTP status codes that should not be reported to Sentry."|t(plugin.handle),
+    id: 'excludedCodes',
+    name: 'excludedCodes',
+    placeholder: '400, 404, 429',
+    value: settings.excludedCodes,
+    disabled: 'excludedCodes' in overrides,
+    warning: 'excludedCodes' in overrides ? configWarning(plugin, 'excludedCodes')
+}) }}
