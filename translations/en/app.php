@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'Singles' => 'Homepage'
+	'Singles' => 'Landing Pages'
 ];

@@ -465,11 +465,12 @@ body {
   body.scrolling header {
     border-bottom: 1px solid #dee2e6; }
   body.sticky {
-    padding-top: 60px; }
+    padding-top: 70px; }
     body.sticky header {
-      height: 60px; }
+      height: 70px; }
       body.sticky header .header-content .logo {
-        height: 50px; }
+        height: 62px;
+        margin-bottom: -4px; }
   body header {
     background: #ffffff;
     height: 100px;
@@ -485,9 +486,10 @@ body {
       width: 100%;
       vertical-align: middle; }
       body header .header-content .logo {
-        height: 90px;
+        height: 110px;
+        margin-bottom: -25px;
         width: auto;
-        transition: 0.35s height linear; }
+        transition: 0.35s height linear, 0.35s margin-bottom linear; }
       body header .header-content .mobile-menu-trigger {
         cursor: pointer;
         text-align: right; }

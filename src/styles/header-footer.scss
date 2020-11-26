@@ -11,7 +11,8 @@ body {
 			height: $sticky-header-height;
 			.header-content {
 				.logo{
-					height: $sticky-header-height - 10px;
+					height: $sticky-header-height - 8px;
+					margin-bottom: -4px;
 				}
 			}
 		}
@@ -34,9 +35,10 @@ body {
 			width: 100%;
 			vertical-align: middle;
 			.logo{
-				height: $header-height - 10px;
+				height: $header-height + 10px;
+				margin-bottom: -25px;
 				width: auto;
-				transition: $transition-time height linear;
+				transition: $transition-time height linear, $transition-time margin-bottom linear;
 			}
 			.mobile-menu-trigger{
 				cursor: pointer;

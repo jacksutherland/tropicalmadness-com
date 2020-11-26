@@ -1,8 +1,9 @@
 baseUrl: $DEFAULT_SITE_URL
+enabled: true
 handle: default
 hasUrls: true
 language: en-US
-name: 'Crafted Base Project'
+name: 'Tropical Madness Website'
 primary: true
 siteGroup: 57475e71-5b23-4cf8-9e0c-4ee0526b30cc
 sortOrder: 1
