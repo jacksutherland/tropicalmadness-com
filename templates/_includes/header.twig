@@ -2,89 +2,90 @@
 
 <header data-title="Site Header">
 	<div class="header-content">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-6 col-lg-4">
-					<a href="/">
-						<img src="/../images/small-logo.png" class="logo" alt="{{ systemName }}" title="{{ systemName }}">
-					</a>
-				</div>
-				<div class="col-6 col-lg-8">
-					<div class="mobile-menu-trigger">
-						<i class="menu-closed fas fa-bars fa-2x"></i>
-					</div>
+		<div class="mobile-menu-trigger">
+			<i class="menu-closed fas fa-bars fa-2x"></i>
+		</div>
+		<div class="container text-center">
+			{# <div class="row align-items-end"> #}
+				{# <div class="col-6 col-lg-5"> #}
+			<a href="/">
+				<img src="/../images/small-logo.png" class="logo" alt="{{ systemName }}" title="{{ systemName }}">
+			</a>
+		</div>
+				{# <div class="col-6 col-lg-7"> #}
 					{#
 						For Full Width Menu add class: full-width-nav
 						<nav id="main-menu" class="full-width-nav" ...
 					 #}
-					<nav id="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<div class="menu-closed">
-							<i class="fa fa-times"></i>
-							<span>Close Menu</span>
-						</div>
-						<ul>
-							{% for item in menu.all() %}
-								<li>
-									<a itemprop="url" id="{{ item.slug }}-button" {% if item.children.count() > 0 %}class="parent-menu-item"{% endif %}{% if item.menuEntry.count() > 0 %} href="{{ item.menuEntry.one().url }}"{% endif %}>
-										<span itemprop="name" class="menu-title">{{ item.menuTitle }}</span>
-										{% if item.children.count() > 0 %}
-											<span class="child-menu-trigger"><i class="fa fa-angle-down fa-lg"></i></span>
-											<span class="child-menu-indicator"><i class="fa fa-angle-down fa-lg"></i></span>
-										{% endif %}
-									</a>
-									{% if item.children.count() > 0 %}
-										<div class="child-menu">
-											<ul>
-												{% for child in item.children.all() %}
-													<li>
-														<a itemprop="url" id="{{ child.slug }}-button" href="{{ child.menuEntry.one().url }}">
-															<span itemprop="name" class="menu-title">{{ child.menuTitle }}</span>
-															{% if child.children.count() > 0 %}
-																<span class="grandchild-menu-trigger"><i class="fa fa-angle-down fa-lg"></i></span>
-																<span class="child-menu-indicator"><i class="fa fa-angle-right fa-lg"></i></span>
-															{% endif %}
-														</a>
-														{% if child.children.count() > 0 %}
-															<div class="grandchild-menu">
-																<ul>
-																	{% for grandchild in child.children.all() %}
-																		<li>
-																			<a itemprop="url" id="{{ grandchild.slug }}-button" href="{{ grandchild.menuEntry.one().url }}">
-																				<span itemprop="name" class="menu-title">{{ grandchild.menuTitle }}</span>
-																			</a>
-																		</li>
-																	{% endfor %}
-																</ul>
-															</div>
-														{% endif %}
-													</li>
-												{% endfor %}
-											</ul>
-										</div>
-									{% endif %}
-								</li>
-							{% endfor %}
-							{# Mobile Search Link #}
-							<li class="d-lg-none">
-								<a itemprop="url" href="/search">
-									<span itemprop="name" class="menu-title">Search</span>
-								</a>
-							</li>
-							{# Desktop Predictive Search #}
-							<li class="predictive-search d-none d-lg-inline">
-								<form class="form" method="get" action="/search">
-									<a itemprop="search" href="/">
-										<i class="fas fa-search"></i>
-									</a>
-									<input name="q" type="text" placeholder="Search">
-								</form>
-								<div class="predictive-results"></div>
-							</li>
-						</ul>
-						</div>
-					</nav>
+		<nav id="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<div class="container">
+				<div class="menu-closed">
+					<i class="fa fa-times"></i>
+					<span>Close Menu</span>
 				</div>
+				<ul>
+					{% for item in menu.all() %}
+						<li>
+							<a itemprop="url" id="{{ item.slug }}-button" {% if item.children.count() > 0 %}class="parent-menu-item"{% endif %}{% if item.menuEntry.count() > 0 %} href="{{ item.menuEntry.one().url }}"{% endif %}>
+								<span itemprop="name" class="menu-title">{{ item.menuTitle }}</span>
+								{% if item.children.count() > 0 %}
+									<span class="child-menu-trigger"><i class="fa fa-angle-down fa-lg"></i></span>
+									<span class="child-menu-indicator"><i class="fa fa-angle-down fa-lg"></i></span>
+								{% endif %}
+							</a>
+							{% if item.children.count() > 0 %}
+								<div class="child-menu">
+									<ul>
+										{% for child in item.children.all() %}
+											<li>
+												<a itemprop="url" id="{{ child.slug }}-button" href="{{ child.menuEntry.one().url }}">
+													<span itemprop="name" class="menu-title">{{ child.menuTitle }}</span>
+													{% if child.children.count() > 0 %}
+														<span class="grandchild-menu-trigger"><i class="fa fa-angle-down fa-lg"></i></span>
+														<span class="child-menu-indicator"><i class="fa fa-angle-right fa-lg"></i></span>
+													{% endif %}
+												</a>
+												{% if child.children.count() > 0 %}
+													<div class="grandchild-menu">
+														<ul>
+															{% for grandchild in child.children.all() %}
+																<li>
+																	<a itemprop="url" id="{{ grandchild.slug }}-button" href="{{ grandchild.menuEntry.one().url }}">
+																		<span itemprop="name" class="menu-title">{{ grandchild.menuTitle }}</span>
+																	</a>
+																</li>
+															{% endfor %}
+														</ul>
+													</div>
+												{% endif %}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							{% endif %}
+						</li>
+					{% endfor %}
+					{# Mobile Search Link #}
+					<li class="d-lg-none">
+						<a itemprop="url" href="/search">
+							<span itemprop="name" class="menu-title">Search</span>
+						</a>
+					</li>
+					{# Desktop Predictive Search #}
+					<li class="predictive-search d-none d-lg-inline">
+						<form class="form" method="get" action="/search">
+							<a itemprop="search" href="/">
+								<i class="fas fa-search"></i>
+							</a>
+							<input name="q" type="text" placeholder="Search">
+						</form>
+						<div class="predictive-results"></div>
+					</li>
+				</ul>
 			</div>
-		</div>
+		</nav>
+				{# </div> #}
+			{# </div> #}
+		{# </div> #}
 	</div>
 </header>

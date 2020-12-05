@@ -1,4 +1,4 @@
-dateModified: 1606418998
+dateModified: 1607128267
 email:
   fromEmail: melina@craftedagency.com
   fromName: 'SPX Power & Energy'
@@ -76,7 +76,7 @@ plugins:
       twitterHandle: ''
   stylus:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.0.0
   super-table:
     edition: standard

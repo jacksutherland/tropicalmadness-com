@@ -1,5 +1,4 @@
 {% set resourceVersion = '1.02' %}
-{% set prototypeMode = false %}
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -89,17 +88,12 @@
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link rel="stylesheet" type='text/css' href="{{ url('\/css/main.min.css?v=') }}{{ resourceVersion }}">
-
-        {% include '_includes/stylus' %}
-
-        {% if prototypeMode %}
-            <link rel="stylesheet" type='text/css' href="{{ url('\/css/prototype.min.css?v=') }}{{ resourceVersion }}">
-        {% endif %}
+        <link href="https://fonts.googleapis.com/css2?family=Calistoga&amp;family=Nerko+One&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" type='text/css' href="{{ url('\/css/site.min.css?v=') }}{{ resourceVersion }}">
 
     </head>
 
-    <body{% if entry is defined %} id="{{ entry.slug }}"{% endif %}{% if prototypeMode %} class="prototype"{% endif %}>
+    <body{% if entry is defined %} id="{{ entry.slug }}"{% endif %}>
         {% if seoDefaults.gtmContainerId is defined and seoDefaults.gtmContainerId | length %}
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seoDefaults.gtmContainerId }}"
@@ -118,10 +112,6 @@
         <!--BEGIN JAVASCRIPT-->
         {# <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> #}
         <script src="{{ url('\/js/site.min.js?v=') }}{{ resourceVersion }}"></script>
-
-        {% if prototypeMode %}
-            <script src="{{ url('\/js/prototype.min.js?v=') }}{{ resourceVersion }}"></script>
-        {% endif %}
 
         {% block scripts %}{% endblock %}
         <!--END JAVASCRIPT-->

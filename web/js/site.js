@@ -459,7 +459,11 @@ var ux = {
 		},
 		sticky: function()
 		{
+			var stickPos = ux.breakpoint.isMobile() ? 140 : 215;
 			var doc = document.documentElement;
+
+			console.log(dom.body.scrollTop);
+
 			window.addEventListener("scroll", function()
 			{
 				if (dom.body.scrollTop > 0 || doc.scrollTop > 0)
@@ -471,7 +475,7 @@ var ux = {
 					dom.body.classList.remove("scrolling");
 				}
 
-				if (dom.body.scrollTop > 60 || doc.scrollTop > 60)
+				if (dom.body.scrollTop > stickPos || doc.scrollTop > stickPos)
 				{
 					dom.body.classList.add("sticky");
 				}
