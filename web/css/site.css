@@ -980,11 +980,22 @@ body footer {
       padding-top: 0; }
     .module.z-pattern .image-wrap,
     .module.z-pattern .full-image {
-      margin-bottom: 0; } }
+      margin-bottom: 0; }
+    .module.rich-text {
+      padding-left: 150px;
+      padding-right: 150px; } }
 
 @media (min-width: 1200px) {
   .module.z-pattern .image-wrap {
-    height: 350px; } }
+    height: 350px; }
+  .module.rich-text {
+    padding-left: 20%;
+    padding-right: 20%; } }
+
+@media (min-width: 1500px) {
+  .module.rich-text {
+    padding-left: 25%;
+    padding-right: 25%; } }
 
 /***** BLOG *****/
 .blog-list article {
