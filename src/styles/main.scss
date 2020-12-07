@@ -25,8 +25,8 @@ html {
 body {
 	color: $font-color;
 	font-family: $default-font;
-	font-size: 1rem;
-	line-height: 1.5rem;
+	font-size: 1.1rem;
+	line-height: 1.75rem;
 	&.overlay {
 		position: relative;
 		&::before{
@@ -61,12 +61,14 @@ small {
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-	font-family: 'Calistoga', cursive;
+	font-family: $header-font;
+
 }
 
 .h1, h1 {
-	font-size: 2rem;
-	line-height: 2.15rem;
+	font-size: 2.25rem;
+	line-height: 2.4rem;
+	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin-bottom: .9rem;
 }
@@ -76,6 +78,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 	line-height: 1.7rem;
 	margin-bottom: 1.375rem;
 	text-transform: uppercase;
+	color: $primary-color;
 	
 	&.subheader {
 		font-size: 1.125rem;
@@ -89,6 +92,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 	font-size: 1.4rem;
 	line-height: 1.5rem;
 	text-transform: uppercase;
+	color: $primary-color;
 }
 
 .h4, h4 {
@@ -114,8 +118,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 a {
 	color: $link-color;
 	text-decoration: none;
-	transition: color $transition-time;
-	transition: background-color $transition-time;
+	transition: color $transition-time, background-color $transition-time;
 
 	&:hover {
 		color: $link-hover-color;
@@ -270,7 +273,7 @@ video {
 	.header-image{
 		position: relative;
 		display: table;
-		width: 100vw;
+		width: 100%;
 		min-height: 450px;
 		overflow: hidden;
 		video{ object-fit: cover; }
@@ -313,6 +316,12 @@ video {
 			vertical-align: middle;
 			color: $white;
 			z-index: 9;
+			.hero-text-wrap {
+				p {
+					font-size: 1.3rem;
+					line-height: 1.55rem;
+				}
+			}
 		}
 	}
 	.hero-carousel {
@@ -410,7 +419,9 @@ button, input[type=submit], .button {
     line-height: $input-height;
     text-align: center;
     width: auto;
-    font-weight: 400;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
     display: inline-block;
     transition: background-color $transition-time;
     &:hover {
@@ -581,17 +592,51 @@ button, input[type=submit], .button {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 	.h1, h1 {
-		font-size: 2.5rem;
-		line-height: 2.65rem;
+		font-size: 3.5rem;
+    	line-height: 3.75rem;
+    	letter-spacing: 0.3rem;
 	}
 	.h2, h2 {
-		font-size: 2rem;
-		line-height: 2.15rem;
+		font-size: 2.25rem;
+		line-height: 2.4rem;
+		letter-spacing: 0.1rem;
+	}
+	.h3, h3 {
+		font-size: 1.6rem;
+		line-height: 1.7rem;
+		letter-spacing: 0.05rem;
+	}
+	button, input[type=submit], .button {
+	    font-size: 1rem;
+	}
+	.page-header {
+		.header-image {
+			.header-content {
+				.hero-text-wrap {
+					p {
+						font-size: 1.6rem;
+						line-height: 1.75rem;
+					}
+				}
+			}
+		}
 	}
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+	body {
+		background-color: $site-container-color;
+		.site-container {
+			padding: ($site-container-padding / 2) $site-container-padding;
+			.page-header {
+				margin-bottom: ($site-container-padding / 2);
+			}
+			.module {
+				background-color: $white;
+			}
+		}
+	}
 	.image-viewer {
 		.active-image-container {
 			.active-image {
@@ -650,5 +695,11 @@ button, input[type=submit], .button {
 @media (min-width: 1300px) {
 	.container {
 	    max-width: 1280px;
+	}
+	.page-header{
+		.hero-carousel,
+		.header-image{
+			min-height: 700px;
+		}
 	}
 }

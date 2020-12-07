@@ -459,10 +459,8 @@ var ux = {
 		},
 		sticky: function()
 		{
-			var stickPos = ux.breakpoint.isMobile() ? 140 : 215;
+			var stickPos = ux.breakpoint.isMobile() ? 140 : 240;
 			var doc = document.documentElement;
-
-			console.log(dom.body.scrollTop);
 
 			window.addEventListener("scroll", function()
 			{

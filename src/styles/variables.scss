@@ -2,24 +2,30 @@
 
 $black: #000000;
 $white: #ffffff;
+$primary-color: #1F5432;
+$secondary-color: #F1993B;
+$tertiary-color: darken(#199DDD, 2%);
 $font-color: #3B4856;
-$link-color: #FE505C;
-$link-hover-color: darken($link-color, 10%);
-$button-color: #FE505C;
-$button-hover-color: darken($button-color, 10%);
+$link-color: $primary-color;
+$link-hover-color: lighten($link-color, 15%);
+$button-color: $tertiary-color;
+$button-hover-color: darken($button-color, 9%);
 $label-color: #212948;
 $border-color: #dee2e6;
 $error-color: #FE505C;
 
-$default-font: 'Open Sans', sans-serif;
+// $default-font: 'Open Sans', sans-serif;
+// $default-font: 'Roboto', sans-serif;
+$default-font: 'Nunito', sans-serif;
+$header-font: 'Calistoga', cursive;
 
 $base-font-size: 16px; // base font-size (1rem = 16px)
 $small-font-size: 0.75rem;
 
 $input-height: 40px; // a consistent height to use for textboxes, buttons or dropdowns
 
-$header-height: 400px;
-$sticky-header-height: 70px;
+$site-container-padding: 50px;
+$site-container-color: lighten($primary-color, 68%);
 
 $transition-time: 0.35s;
 

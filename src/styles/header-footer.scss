@@ -1,28 +1,60 @@
+@keyframes drop-logo-down {
+   0% {
+      transform: translateY(-100px);
+   }
+   60% {
+      transform: translateY(-100px);
+   }
+   90% {
+      transform: translateY(15px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+} 
+
+@keyframes logo-hover {
+	0% {
+		transform: scale(1);
+	}
+	40% {
+		transform: scale(1.03);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
 body {
-	//padding-top: $header-height;
 	&.scrolling {
 		header {
 			border-bottom: 1px solid $border-color;
 		}
 	}
 	&.sticky {
-		//padding-top: 267px;
 		padding-top: 180px;
-		//padding-top: $sticky-header-height;
 		header {
-			//height: $sticky-header-height;
 			position: fixed;
 			top: 0;
 			left: 0;
+			right: 0;
 			z-index: 999;
 			.header-content {
 				nav {
 					border: none;
 				}
-				.logo{
-					//height: $sticky-header-height - 8px;
-					//margin-bottom: -4px;
-					display: none;
+				.container {
+					position: relative;
+					.logo {
+						position: absolute;
+						height: 70px;
+						left: 25px;
+					    top: -15px;
+					    padding: 0;
+						z-index: 1000;
+					    filter: drop-shadow(1px 1px 0 $white) drop-shadow(-1px 1px 0 $white) drop-shadow(1px -1px 0 $white) drop-shadow(-1px -1px 0 $white);
+					    animation: drop-logo-down 1s ease-in;
+					}
 				}
 			}
 		}
@@ -32,15 +64,9 @@ body {
 
 	header {
 		background: $white;
-		//height: $header-height;
-		//position: fixed;
-		//top: 0;
-		//left: 0;
 		width: 100%;
 		min-height: 40px;
-		//z-index: 999;
 		display: table;
-		//transition: $transition-time height linear;
 		.header-content {
 			display: table-cell;
 			width: 100%;
@@ -48,16 +74,14 @@ body {
 			.logo{
 				padding:25px 0 15px 0;
 				margin-bottom: 0;
-
-				height: 180px; //$header-height + 10px;
-				//margin-bottom: -25px;
+				height: 180px;
 				width: auto;
-				//transition: $transition-time height linear, $transition-time margin-bottom linear;
-				//transition: $transition-time height linear;
+				&:hover {
+					animation: logo-hover 0.35s ease-in;
+				}
 			}
 			.mobile-menu-trigger{
 				cursor: pointer;
-				//text-align: right;
 				position: fixed;
 			    top: 5px;
 			    right: 20px;
@@ -77,6 +101,7 @@ body {
 				display: none;
 				&.open {
 					display: block;
+					box-shadow: 0 1px 5px $black;
 				}
 				.menu-closed{
 					display: block;
@@ -176,6 +201,8 @@ body {
 							border-bottom: 1px solid $border-color;
 				    		font-size: initial;
 				    		display: block;
+				    		font-family: $header-font;
+				    		//color: $primary-color;
 				    		color: $font-color;
 				    		font-weight: 400;
 				    		font-size: 0;
@@ -245,7 +272,20 @@ body {
 
 	footer {
 		border-top: 1px solid $border-color;
-		padding: 50px 0;
+		padding: 100px 0;
+		background-color: $black;
+		color: $site-container-color;
+		a {
+			color: #96826A;
+		}
+		.logo {
+			filter: grayscale(70%);
+			transition: filter $transition-time;
+			opacity: 0.9;
+			&:hover {
+				filter: grayscale(45%);
+			}
+		}
 		.social{
 			a{
 				margin: 0 3px;
@@ -269,12 +309,25 @@ body {
 	body{
 		&.sticky {
 			padding-top: 267px;
+			header {
+				left: $site-container-padding;
+				//right: $site-container-padding;
+				width: calc(100% - (#{$site-container-padding} * 2));
+				.header-content {
+					.container {
+						.logo {
+						    height: 90px;
+						    top: 5px;
+						}
+					}
+				}
+			}
 		}
 		&.overlay::before {
 			content:none;
 			&.sticky {
 				header {
-					nav > ul > li a{
+					nav > ul > li a {
 						font-size: 14px;
 					}
 				}
@@ -290,7 +343,7 @@ body {
 				}
 				.logo {
 					height: 230px;
-					padding:10px 0 0 0;
+					padding: 10px 0 0 0;
 					margin-bottom: -15px;
 				}
 				nav {
@@ -340,8 +393,11 @@ body {
 								z-index: 100;
 								padding: 15px 15px;
 								font-weight: 400;
-								color: $font-color;
-								.menu-title{
+								//color: $font-color;
+								&:hover {
+									color: $link-hover-color;
+								}
+								.menu-title {
 					    			padding: 0;
 					    			width: auto;
 					    		}
@@ -378,7 +434,7 @@ body {
 									text-align: left;
 									background-color: $white;
 								    padding: 10px 0;
-								    box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 6px 14px rgba(0,0,0,.10);
+								    box-shadow: 0 2px 5px lighten($black, 20%);
 									> li {
 										position: relative;
 										white-space: nowrap;
@@ -395,8 +451,7 @@ body {
 										}
 										a{
 											display: inline-block;
-											padding: 0 5px;
-											color: #000 !important;
+											padding: 5px 5px;
 											font-weight: 400;
 										}
 										.grandchild-menu {

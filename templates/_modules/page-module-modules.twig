@@ -58,7 +58,7 @@
 					<div class="row">
 						<div class="col-12">
 							{% if module.headline | length %}
-								<h3>{{ module.headline }}</h3>
+								<h2>{{ module.headline }}</h2>
 							{% endif %}
 						</div>
 						<div class="col-12">
@@ -77,7 +77,6 @@
 							{% endif %}
 						</div>
 					</div>
-					</div>
 				</div>
 			</div>
 
@@ -87,7 +86,7 @@
 					<div class="row justify-content-center">
 						<div class="col-12 col-xl-8 col">
 							{% if module.headline | length %}
-								<h3>{{ module.headline }}</h3>
+								<h2>{{ module.headline }}</h2>
 							{% endif %}
 							{% set initialVideo = module.videos.one() %}
 							<div class="video-player" data-url="{{ initialVideo.videoUrl }}" data-id="{{ module.id }}">
