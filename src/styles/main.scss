@@ -300,12 +300,17 @@ video {
 			}
 			&.overlay-light {
 				&:after {
-					background: rgba(0, 0, 0, .2);
+					background: rgba(0, 0, 0, .25);
+				}
+			}
+			&.overlay-medium {
+				&:after {
+					background: rgba(0, 0, 0, .45);
 				}
 			}
 			&.overlay-dark {
 				&:after {
-					background: rgba(0, 0, 0, .7);
+					background: rgba(0, 0, 0, .65);
 				}
 			}
 		}
@@ -397,9 +402,12 @@ video {
 			width: 100%;
 		}
 	}
-	.text-header{
-		background: $label-color;
+	.text-header {
+		background-color: $tertiary-color;
 		color: $white;
+		h1 {
+			color: $white;
+		}
 	}
 }
 
@@ -616,6 +624,7 @@ button, input[type=submit], .button {
 					p {
 						font-size: 1.6rem;
 						line-height: 1.75rem;
+						width: 77%;
 					}
 				}
 			}
@@ -629,11 +638,22 @@ button, input[type=submit], .button {
 		background-color: $site-container-color;
 		.site-container {
 			padding: ($site-container-padding / 2) $site-container-padding;
-			.page-header {
-				margin-bottom: ($site-container-padding / 2);
-			}
 			.module {
 				background-color: $white;
+			}
+		}
+		&#homepage {
+			h1 {
+				text-shadow:
+				   -2px -2px 0 $primary-color,  
+				    2px -2px 0 $primary-color,
+				    -2px 2px 0 $primary-color,
+				     2px 2px 0 $primary-color;
+			}
+			.site-container {
+				.page-header {
+					margin-bottom: ($site-container-padding / 2);
+				}
 			}
 		}
 	}
@@ -684,6 +704,17 @@ button, input[type=submit], .button {
 				    height: 430px;
 				    left: -445px;
 				    margin-top: -215px;
+				}
+			}
+		}
+	}
+	.page-header {
+		.header-image {
+			.header-content {
+				.hero-text-wrap {
+					p {
+						margin: 0 auto 1rem auto;
+					}
 				}
 			}
 		}

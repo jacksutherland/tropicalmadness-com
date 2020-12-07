@@ -3,13 +3,14 @@
 $black: #000000;
 $white: #ffffff;
 $primary-color: #1F5432;
-$secondary-color: #F1993B;
-$tertiary-color: darken(#199DDD, 2%);
+$secondary-color: #8BB929;
+$tertiary-color: darken(#199FDE, 4%);
+$quaternary-color: #F1993B;
 $font-color: #3B4856;
 $link-color: $primary-color;
 $link-hover-color: lighten($link-color, 15%);
 $button-color: $tertiary-color;
-$button-hover-color: darken($button-color, 9%);
+$button-hover-color: darken($button-color, 8%);
 $label-color: #212948;
 $border-color: #dee2e6;
 $error-color: #FE505C;

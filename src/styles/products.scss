@@ -1,6 +1,12 @@
 /***** PRODUCTS *****/
 
+
 .product-list {
+	background-color: $white;
+	padding: 20px 0;
+	&.has-product-types {
+		padding: 1px 0;
+	}
 	article {
 		padding: 20px 0;
 		a {

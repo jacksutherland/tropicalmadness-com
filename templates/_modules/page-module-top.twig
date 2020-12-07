@@ -2,12 +2,12 @@
 	This is the page module content positioned above the page's custom content
 #}
 
-{% set showModule = true %}
+{% set showModule = false %}
 
 {% for module in entry.pageModule.all() %}
 
 	{% if module.type == "customPageContent" %}
-		{% set showModule = false %}
+		{% set showModule = true %}
 	{% endif %}
 
 	{% if showModule %}

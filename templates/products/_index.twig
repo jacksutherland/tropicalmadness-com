@@ -5,24 +5,26 @@
 
 {% set types = craft.entries.section("productTypes") %}
 
-<div class="product-list">
+<div class="product-list{% if types.count() > 1 %} has-product-types{% endif%}">
 	<div class="container">
 
-		<div class="product-types">
-			<strong>Product Types:</strong>
-			<ul>
-				{% for t in types.all() %}
-					<li>
-						{% if loop.index > 1 %}
-							<span> | </span>
-						{% endif %}
-						<a href="{{ t.url }}">
-							{{ t.friendlyTitle }}
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
+		{% if types.count() > 1 %}
+			<div class="product-types">
+				<strong>Product Types:</strong>
+				<ul>
+					{% for t in types.all() %}
+						<li>
+							{% if loop.index > 1 %}
+								<span> | </span>
+							{% endif %}
+							<a href="{{ t.url }}">
+								{{ t.friendlyTitle }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
 
 		{% include 'lists/_lazyloader' with { section: 'products', template: 'products/_products' } %}
 

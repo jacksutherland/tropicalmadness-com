@@ -46,10 +46,11 @@ body {
 				.container {
 					position: relative;
 					.logo {
+						display: none;
 						position: absolute;
 						height: 70px;
-						left: 25px;
-					    top: -15px;
+						left: 30px;
+					    top: -33px;
 					    padding: 0;
 						z-index: 1000;
 					    filter: drop-shadow(1px 1px 0 $white) drop-shadow(-1px 1px 0 $white) drop-shadow(1px -1px 0 $white) drop-shadow(-1px -1px 0 $white);
@@ -65,7 +66,7 @@ body {
 	header {
 		background: $white;
 		width: 100%;
-		min-height: 40px;
+		min-height: 60px;
 		display: table;
 		.header-content {
 			display: table-cell;
@@ -83,8 +84,8 @@ body {
 			.mobile-menu-trigger{
 				cursor: pointer;
 				position: fixed;
-			    top: 5px;
-			    right: 20px;
+			    top: 12px;
+			    right: 32px;
 			}
 			nav {
 				display: none;
@@ -206,12 +207,14 @@ body {
 				    		color: $font-color;
 				    		font-weight: 400;
 				    		font-size: 0;
-				    		.menu-title{
+				    		.menu-title {
 				    			font-size: 1rem;
 				    			display: inline-block;
 				    			vertical-align: top;
-				    			padding: 0 15px;
-				    			width: calc(100% - 55px);
+				    			padding: 0 0 0 15px;
+				    			&.has-children {
+					    			width: calc(100% - 55px);
+					    		}
 				    		}
 			    			.child-menu-trigger, .grandchild-menu-trigger {
 			    				font-size: 1rem;
@@ -276,19 +279,26 @@ body {
 		background-color: $black;
 		color: $site-container-color;
 		a {
-			color: #96826A;
+			color: $link-hover-color; //lighten($link-color, 5%); // #96826A;
+			&:hover {
+				color: $secondary-color;
+			}
 		}
 		.logo {
-			filter: grayscale(70%);
+			filter: grayscale(50%);
 			transition: filter $transition-time;
-			opacity: 0.9;
+			//opacity: 0.9;
 			&:hover {
-				filter: grayscale(45%);
+				filter: grayscale(20%);
 			}
 		}
 		.social{
 			a{
 				margin: 0 3px;
+				color: $button-hover-color;
+				&:hover {
+					color: $button-color;
+				}
 			}
 		}
 	} // END footer
@@ -308,7 +318,7 @@ body {
 {
 	body{
 		&.sticky {
-			padding-top: 267px;
+			padding-top: 207px;
 			header {
 				left: $site-container-padding;
 				//right: $site-container-padding;
@@ -317,7 +327,7 @@ body {
 					.container {
 						.logo {
 						    height: 90px;
-						    top: 5px;
+						    top: 18px;
 						}
 					}
 				}
@@ -337,14 +347,15 @@ body {
 		//********** HEADER **********//
 
 		header {
+			min-height: 40px;
 			.header-content {
 				.mobile-menu-trigger{
 					display: none;
 				}
 				.logo {
-					height: 230px;
-					padding: 10px 0 0 0;
-					margin-bottom: -15px;
+					height: 180px;
+					padding: 0;
+					margin: -15px 0;
 				}
 				nav {
 					border-top: 1px solid $border-color;
@@ -358,6 +369,7 @@ body {
 					text-align: center;
 					width: auto;
 					height: auto;
+					box-shadow: none !important;
 					.menu-closed{
 						display: none;
 					}
@@ -397,7 +409,8 @@ body {
 								&:hover {
 									color: $link-hover-color;
 								}
-								.menu-title {
+								.menu-title,
+								.menu-title.has-children {
 					    			padding: 0;
 					    			width: auto;
 					    		}

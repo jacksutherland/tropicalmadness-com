@@ -27,10 +27,12 @@
 					{% for item in menu.all() %}
 						<li>
 							<a itemprop="url" id="{{ item.slug }}-button" {% if item.children.count() > 0 %}class="parent-menu-item"{% endif %}{% if item.menuEntry.count() > 0 %} href="{{ item.menuEntry.one().url }}"{% endif %}>
-								<span itemprop="name" class="menu-title">{{ item.menuTitle }}</span>
 								{% if item.children.count() > 0 %}
+									<span itemprop="name" class="menu-title has-children">{{ item.menuTitle }}</span>
 									<span class="child-menu-trigger"><i class="fa fa-angle-down fa-lg"></i></span>
 									<span class="child-menu-indicator"><i class="fa fa-angle-down fa-lg"></i></span>
+								{% else %}
+									<span itemprop="name" class="menu-title">{{ item.menuTitle }}</span>
 								{% endif %}
 							</a>
 							{% if item.children.count() > 0 %}
@@ -49,11 +51,13 @@
 													<div class="grandchild-menu">
 														<ul>
 															{% for grandchild in child.children.all() %}
-																<li>
-																	<a itemprop="url" id="{{ grandchild.slug }}-button" href="{{ grandchild.menuEntry.one().url }}">
-																		<span itemprop="name" class="menu-title">{{ grandchild.menuTitle }}</span>
-																	</a>
-																</li>
+																{% if grandchild.menuEntry.count() > 0 %}
+																	<li>
+																		<a itemprop="url" id="{{ grandchild.slug }}-button" href="{{ grandchild.menuEntry.one().url }}">
+																			<span itemprop="name" class="menu-title">{{ grandchild.menuTitle }}</span>
+																		</a>
+																	</li>
+																{% endif %}
 															{% endfor %}
 														</ul>
 													</div>

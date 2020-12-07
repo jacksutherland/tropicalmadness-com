@@ -383,6 +383,10 @@ var ux = {
 		{
 			return (ux.breakpoint.size == "sm" || ux.breakpoint.size == "xs");
 		},
+		isTabletOrMobile: function()
+		{
+			return (ux.breakpoint.size == "md" || ux.breakpoint.size == "sm" || ux.breakpoint.size == "xs");
+		},
 		changed: function(callback)
 		{
 			ux.breakpoint.callbacks.push(callback);
@@ -459,7 +463,7 @@ var ux = {
 		},
 		sticky: function()
 		{
-			var stickPos = ux.breakpoint.isMobile() ? 140 : 240;
+			var stickPos = ux.breakpoint.isTabletOrMobile() ? 120 : 177;
 			var doc = document.documentElement;
 
 			window.addEventListener("scroll", function()
