@@ -1957,6 +1957,11 @@
         "sshpk": "^1.7.0"
       }
     },
+    "imagemagick": {
+      "version": "0.1.3",
+      "resolved": "https://registry.npmjs.org/imagemagick/-/imagemagick-0.1.3.tgz",
+      "integrity": "sha1-dIPOoJO02fLi85aFetyIIbU3xWo="
+    },
     "in-publish": {
       "version": "2.0.1",
       "resolved": "https://registry.npmjs.org/in-publish/-/in-publish-2.0.1.tgz",
