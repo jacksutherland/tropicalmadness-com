@@ -4,5 +4,6 @@
 /.idea
 .DS_Store
 /node_modules
-/web/uploads
 /web/cpresources
+/web/images
+/web/videos
