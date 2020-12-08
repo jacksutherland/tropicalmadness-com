@@ -59,19 +59,24 @@
 				        <source src="{{ slide.heroVideo.one().url("hero") }}" type="video/mp4">
 				    </video>
 				{% else %}
-					<div class="desktop-header" style="background-image: url('{{ slide.heroImage.one().url("hero") }}'); {% if slide.heroImageFocalPoint != 'center' %}background-position: {{ slide.heroImageFocalPoint }}{% endif %}" ></div>
+					<div class="desktop-header" style="{% if slide.heroImage.count %}background-image: url('{{ slide.heroImage.one().url("hero") }}');{% endif %} {% if slide.heroImageFocalPoint != 'center' %}background-position: {{ slide.heroImageFocalPoint }}{% endif %}" ></div>
 				{% endif %}
 			</div>
 			{% if slide.mobileHeroImage.count > 0 %}
 				<div class="mobile-header{% if slide.heroImageOverlay != 'overlay-none' %} image-overlay {{ slide.heroImageOverlay }}{% endif %}" style="background-image: url('{{ slide.mobileHeroImage.one().url("hero") }}')"></div>
 			{% endif %}
 			{% if slide.heroTitle | length or slide.heroText | length or entry.heroCta %}
-				<div class="header-content">
-					<div class="container">
+				{% set heroIsAnimated = (slide.heroTitle and slide.heroTitle[0:2] == "['") %}
+				<div class="header-content{% if heroIsAnimated %} align-bottom{% endif %}">
+					<div class="{% if not heroIsAnimated %}container{% endif %}">
 						<div class="row">
-							<div class="hero-text-wrap text-left text-xl-center col-12 col-md-9 mx-lg-auto">
+							<div class="hero-text-wrap text-left{% if not heroIsAnimated %} text-xl-center mx-lg-auto{% else %} col-xl-7{% endif %} col-12 col-md-9">
 								{% if slide.heroTitle %}
-									<h1>{{ slide.heroTitle }}</h1>
+									{% if heroIsAnimated %}
+										<h1 class="animated-hero-text" data-array="{{slide.heroTitle}}"></h1>
+									{% else %}
+										<h1>{{ slide.heroTitle }}</h1>
+									{% endif %}
 								{% endif %}
 								{% if slide.heroText %}
 									<p>{{ slide.heroText }}</p>

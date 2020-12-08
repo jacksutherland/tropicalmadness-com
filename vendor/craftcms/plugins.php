@@ -60,22 +60,6 @@ return array (
     'hasCpSettings' => true,
     'hasCpSection' => false,
   ),
-  'ether/seo' => 
-  array (
-    'class' => 'ether\\seo\\Seo',
-    'basePath' => $vendorDir . '/ether/seo/src',
-    'handle' => 'seo',
-    'aliases' => 
-    array (
-      '@ether/seo' => $vendorDir . '/ether/seo/src',
-    ),
-    'name' => 'SEO',
-    'version' => '3.6.6',
-    'description' => 'SEO utilities including a unique field type, sitemap, & redirect manager',
-    'developer' => 'Ether Creative',
-    'developerUrl' => 'https://ethercreative.co.uk',
-    'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
-  ),
   'nfourtythree/entriessubset' => 
   array (
     'class' => 'nfourtythree\\entriessubset\\EntriesSubset',
@@ -95,41 +79,6 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/nfourtythree/craft3-entriessubset/master/CHANGELOG.md',
     'hasCpSettings' => false,
     'hasCpSection' => false,
-  ),
-  'craftcms/redactor' => 
-  array (
-    'class' => 'craft\\redactor\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/redactor/src',
-    'handle' => 'redactor',
-    'aliases' => 
-    array (
-      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
-    ),
-    'name' => 'Redactor',
-    'version' => '2.8.3',
-    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/redactor/blob/v2/README.md',
-  ),
-  'verbb/super-table' => 
-  array (
-    'class' => 'verbb\\supertable\\SuperTable',
-    'basePath' => $vendorDir . '/verbb/super-table/src',
-    'handle' => 'super-table',
-    'aliases' => 
-    array (
-      '@verbb/supertable' => $vendorDir . '/verbb/super-table/src',
-    ),
-    'name' => 'Super Table',
-    'version' => '2.6.3',
-    'description' => 'Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.',
-    'developer' => 'Verbb',
-    'developerUrl' => 'https://verbb.io',
-    'developerEmail' => 'support@verbb.io',
-    'documentationUrl' => 'https://github.com/verbb/super-table',
-    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md',
   ),
   'craftedagency/stylus' => 
   array (
@@ -151,5 +100,56 @@ return array (
     array (
       'zoomMeetingService' => 'craftedagency\\stylus\\services\\StylusService',
     ),
+  ),
+  'craftcms/redactor' => 
+  array (
+    'class' => 'craft\\redactor\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/redactor/src',
+    'handle' => 'redactor',
+    'aliases' => 
+    array (
+      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
+    ),
+    'name' => 'Redactor',
+    'version' => '2.8.4',
+    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/redactor/blob/v2/README.md',
+  ),
+  'ether/seo' => 
+  array (
+    'class' => 'ether\\seo\\Seo',
+    'basePath' => $vendorDir . '/ether/seo/src',
+    'handle' => 'seo',
+    'aliases' => 
+    array (
+      '@ether/seo' => $vendorDir . '/ether/seo/src',
+    ),
+    'name' => 'SEO',
+    'version' => '3.6.7',
+    'description' => 'SEO utilities including a unique field type, sitemap, & redirect manager',
+    'developer' => 'Ether Creative',
+    'developerUrl' => 'https://ethercreative.co.uk',
+    'documentationUrl' => 'https://github.com/ethercreative/seo/blob/v3/README.md',
+  ),
+  'verbb/super-table' => 
+  array (
+    'class' => 'verbb\\supertable\\SuperTable',
+    'basePath' => $vendorDir . '/verbb/super-table/src',
+    'handle' => 'super-table',
+    'aliases' => 
+    array (
+      '@verbb/supertable' => $vendorDir . '/verbb/super-table/src',
+    ),
+    'name' => 'Super Table',
+    'version' => '2.6.4',
+    'description' => 'Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.',
+    'developer' => 'Verbb',
+    'developerUrl' => 'https://verbb.io',
+    'developerEmail' => 'support@verbb.io',
+    'documentationUrl' => 'https://github.com/verbb/super-table',
+    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md',
   ),
 );

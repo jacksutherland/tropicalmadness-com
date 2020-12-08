@@ -191,6 +191,24 @@ video {
   to {
     left: 0; } }
 
+@keyframes hide-animated-hero-text {
+  0% {
+    opacity: 0.85;
+    transform: translateY(0); }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translateY(200%); } }
+
+@keyframes show-animated-hero-text {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  30%,
+  100% {
+    opacity: 0.85;
+    transform: translateX(0); } }
+
 .page-header .hero-carousel,
 .page-header .header-image {
   position: relative;
@@ -244,6 +262,17 @@ video {
     .page-header .header-image .header-content .hero-text-wrap p {
       font-size: 1.3rem;
       line-height: 1.55rem; }
+    .page-header .hero-carousel .header-content .hero-text-wrap .animated-hero-text,
+    .page-header .header-image .header-content .hero-text-wrap .animated-hero-text {
+      opacity: 0;
+      margin: 0 30px 10px 30px; }
+      .page-header .hero-carousel .header-content .hero-text-wrap .animated-hero-text.hide,
+      .page-header .header-image .header-content .hero-text-wrap .animated-hero-text.hide {
+        animation: hide-animated-hero-text 1s ease-in; }
+      .page-header .hero-carousel .header-content .hero-text-wrap .animated-hero-text.show,
+      .page-header .header-image .header-content .hero-text-wrap .animated-hero-text.show {
+        opacity: 0.85;
+        animation: show-animated-hero-text 1s ease-in; }
 
 .page-header .hero-carousel {
   position: relative; }
@@ -437,8 +466,8 @@ button, input[type=submit], .button {
 
 @media (min-width: 768px) {
   .h1, h1 {
-    font-size: 3.5rem;
-    line-height: 3.75rem;
+    font-size: 3.4rem;
+    line-height: 3.95rem;
     letter-spacing: 0.3rem; }
   .h2, h2 {
     font-size: 2.25rem;
@@ -453,7 +482,9 @@ button, input[type=submit], .button {
   .page-header .header-image .header-content .hero-text-wrap p {
     font-size: 1.6rem;
     line-height: 1.75rem;
-    width: 77%; } }
+    width: 77%; }
+  .page-header .header-image .header-content .hero-text-wrap .animated-hero-text {
+    margin: 0 45px 20px 45px; } }
 
 @media (min-width: 992px) {
   body {
@@ -462,8 +493,6 @@ button, input[type=submit], .button {
       padding: 25px 50px; }
       body .site-container .module {
         background-color: #ffffff; }
-    body#homepage h1 {
-      text-shadow: -2px -2px 0 #1F5432, 2px -2px 0 #1F5432, -2px 2px 0 #1F5432, 2px 2px 0 #1F5432; }
     body#homepage .site-container .page-header {
       margin-bottom: 25px; }
   .image-viewer .active-image-container .active-image {

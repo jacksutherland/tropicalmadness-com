@@ -1,3 +1,33 @@
+fieldLayouts:
+  58792519-fb54-4582-bca1-80cf44e55043:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: generic
 hasUrls: true
 name: Generic
@@ -5,4 +35,4 @@ settings:
   path: images/generic
 sortOrder: 1
 type: craft\volumes\Local
-url: 'http://proto.craftedagency.com/images/generic'
+url: /images/generic

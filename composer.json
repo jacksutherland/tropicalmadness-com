@@ -1,14 +1,14 @@
 {
   "require": {
-    "craftcms/cms": "3.5.15.1",
+    "craftcms/cms": "3.5.16",
     "craftcms/rackspace": "^1.1",
-    "craftcms/redactor": "2.8.3",
+    "craftcms/redactor": "2.8.4",
     "craftedagency/stylus": "^1.0",
-    "ether/seo": "3.6.6",
+    "ether/seo": "3.6.7",
     "flipboxfactory/craft-link": "^1.1",
     "lukeyouell/craft-sentry": "^1.5",
     "nfourtythree/entriessubset": "1.2.3",
-    "verbb/super-table": "2.6.3",
+    "verbb/super-table": "2.6.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {

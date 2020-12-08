@@ -1,0 +1,38 @@
+fieldLayouts:
+  00e941b4-c864-4124-a0f7-83536b4bedb4:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: products
+hasUrls: true
+name: Products
+settings:
+  path: images/products
+sortOrder: 2
+type: craft\volumes\Local
+url: /images/products

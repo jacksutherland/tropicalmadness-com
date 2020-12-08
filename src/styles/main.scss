@@ -267,6 +267,33 @@ video {
       to { left: 0; }
 }
 
+$animated-hero-text-opacity: 0.85;
+
+@keyframes hide-animated-hero-text
+{
+	0% {
+		opacity: $animated-hero-text-opacity;
+		transform: translateY(0);
+	}
+	50%,
+	100% {
+		opacity: 0;
+		transform: translateY(200%);
+	}
+}
+
+@keyframes show-animated-hero-text
+{
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	30%,
+	100% {
+		opacity: $animated-hero-text-opacity;
+		transform: translateX(0);
+	}
+}
 
 .page-header{
 	.hero-carousel,
@@ -325,6 +352,18 @@ video {
 				p {
 					font-size: 1.3rem;
 					line-height: 1.55rem;
+				}
+				.animated-hero-text {
+					opacity: 0;
+					margin: 0 30px 10px 30px;
+					//margin: 0 45px 25px 45px;
+					&.hide {
+						animation: hide-animated-hero-text 1s ease-in;
+					}
+					&.show {
+						opacity: $animated-hero-text-opacity;
+						animation: show-animated-hero-text 1s ease-in;
+					}
 				}
 			}
 		}
@@ -600,8 +639,8 @@ button, input[type=submit], .button {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 	.h1, h1 {
-		font-size: 3.5rem;
-    	line-height: 3.75rem;
+		font-size: 3.4rem;
+    	line-height: 3.95rem;
     	letter-spacing: 0.3rem;
 	}
 	.h2, h2 {
@@ -626,6 +665,9 @@ button, input[type=submit], .button {
 						line-height: 1.75rem;
 						width: 77%;
 					}
+					.animated-hero-text {
+						margin: 0 45px 20px 45px;
+					}
 				}
 			}
 		}
@@ -643,13 +685,13 @@ button, input[type=submit], .button {
 			}
 		}
 		&#homepage {
-			h1 {
-				text-shadow:
-				   -2px -2px 0 $primary-color,  
-				    2px -2px 0 $primary-color,
-				    -2px 2px 0 $primary-color,
-				     2px 2px 0 $primary-color;
-			}
+			// h1 {
+			// 	text-shadow:
+			// 	   -2px -2px 0 #000,
+			// 	    2px -2px 0 #000,
+			// 	    -2px 2px 0 #000,
+			// 	     2px 2px 0 #000;
+			// }
 			.site-container {
 				.page-header {
 					margin-bottom: ($site-container-padding / 2);

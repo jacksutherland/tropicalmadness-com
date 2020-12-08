@@ -10,6 +10,14 @@ dom.onLoad(function()
 		ux.carousel.init(parseInt(hc[0].dataset.delay));
 	}
 
+	// Animated Hero Text
+
+	var heroText = document.getElementsByClassName("animated-hero-text");
+	if(heroText.length > 0)
+	{
+		ux.hero.animateText(heroText[0]);
+	}
+
 	// Page Module Initialization
 
 	ux.modules.init();
@@ -168,6 +176,87 @@ var ux = {
 					dom.body.classList.remove("sticky");
 				}
 			});
+		}
+	},
+
+	hero: {
+		animateText: function(textElement)
+		{
+			var intervalDuration = 12000;
+			var arrayCount = 0;
+			var textArray = textElement.dataset.array.replace(/[\[\]']+/g, '').split('~');
+			var hero = document.getElementsByClassName('hero')[0];
+			var heroTextInterval = 0;
+			var video = hero.getElementsByTagName("video");
+
+			if(video.length > 0)
+			{
+				video = video[0];				
+			}
+			else
+			{
+				video = null;
+			}
+
+			var changeText = function()
+			{
+				textElement.innerText = textArray[arrayCount++];
+				textElement.classList.remove('hide');
+				textElement.classList.add('show');
+				setTimeout(function()
+				{
+					textElement.classList.remove('show');
+					textElement.classList.add('hide');
+				}, (intervalDuration / 2));
+				if(arrayCount >= textArray.length)
+				{
+					arrayCount = 0;
+				}
+			}
+
+			var observerFunction = function(entries)
+			{
+				if(entries[0].isIntersecting === true)
+				{
+					changeText();
+					heroTextInterval = setInterval(changeText, intervalDuration);
+					if(video != null)
+					{
+						video.play();
+					}
+				}
+				else
+				{
+					textElement.classList.remove('show');
+					textElement.classList.add('hide');
+					if(video != null)
+					{
+						video.pause();
+						video.currentTime = 0;
+						arrayCount = 0;
+					}
+					clearInterval(heroTextInterval);
+				}
+			}
+
+			var io = new IntersectionObserver(observerFunction, { threshold: [0] });
+
+			if(video != null)
+			{
+				video.addEventListener("loadeddata", function()
+				{
+					intervalDuration = Math.round(video.duration / textArray.length) * 1000;
+					if(intervalDuration < 8000)
+					{
+						intervalDuration = 10000;
+					}
+					io.observe(hero);
+				});
+			}
+			else
+			{
+				io.observe(hero);
+			}
 		}
 	},
 
