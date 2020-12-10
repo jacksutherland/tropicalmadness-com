@@ -258,11 +258,11 @@
 		padding: 40px 0;
 
 		&:first-child {
-			padding-top: 80px;
+			padding-top: 90px;
 		}
 
 		&:last-child {
-			padding-bottom: 80px;
+			padding-bottom: 90px;
 		}
 	}
 }
@@ -272,11 +272,11 @@
 	.module {
 		padding: 80px 0;
 		&:first-child {
-			padding-top: 160px;
+			padding-top: 110px;
 		}
 
 		&:last-child {
-			padding-bottom: 160px;
+			padding-bottom: 110px;
 		}
 		& + .module{
 			padding-top: 1px;
@@ -300,11 +300,11 @@
 	.module {
 		padding: 120px 0;
 		&:first-child {
-			padding-top: 240px;
+			padding-top: 130px;
 		}
 
 		&:last-child {
-			padding-bottom: 240px;
+			padding-bottom: 130px;
 		}
 		&.z-pattern {
 			.image-wrap{
