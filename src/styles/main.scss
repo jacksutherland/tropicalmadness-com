@@ -638,6 +638,9 @@ button, input[type=submit], .button {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+	.align-md-bottom {
+		vertical-align: bottom !important;
+	}
 	.h1, h1 {
 		font-size: 3.4rem;
     	line-height: 3.95rem;

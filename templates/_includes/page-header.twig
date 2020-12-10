@@ -67,13 +67,14 @@
 			{% endif %}
 			{% if slide.heroTitle | length or slide.heroText | length or entry.heroCta %}
 				{% set heroIsAnimated = (slide.heroTitle and slide.heroTitle[0:2] == "['") %}
-				<div class="header-content{% if heroIsAnimated %} align-bottom{% endif %}">
+				<div class="header-content{% if heroIsAnimated %} align-middle align-md-bottom{% endif %}">
 					<div class="{% if not heroIsAnimated %}container{% endif %}">
 						<div class="row">
 							<div class="hero-text-wrap text-left{% if not heroIsAnimated %} text-xl-center mx-lg-auto{% else %} col-xl-7{% endif %} col-12 col-md-9">
 								{% if slide.heroTitle %}
 									{% if heroIsAnimated %}
-										<h1 class="animated-hero-text" data-array="{{slide.heroTitle}}"></h1>
+										<h1 class="animated-hero-text d-none d-md-block" data-array="{{slide.heroTitle}}"></h1>
+										<h1 class="d-block d-md-none text-center">{{ entry.friendlyTitle }}</h1>
 									{% else %}
 										<h1>{{ slide.heroTitle }}</h1>
 									{% endif %}
