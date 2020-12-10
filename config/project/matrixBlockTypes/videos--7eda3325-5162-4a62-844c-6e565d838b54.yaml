@@ -3,13 +3,25 @@ fieldLayouts:
   224c7cc4-7219-4f8b-9f2f-e7dd3608b3bc:
     tabs:
       -
-        fields:
-          4dd991ed-e013-40d6-975d-5866096f678f:
+        elements:
+          -
+            fieldUid: d87cd8b7-79c2-4194-81cc-707eb366ee1b
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          d87cd8b7-79c2-4194-81cc-707eb366ee1b:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4dd991ed-e013-40d6-975d-5866096f678f
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -48,6 +60,7 @@ fields:
       fieldLayout: row
       maxRows: ''
       minRows: '1'
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''
@@ -69,9 +82,10 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
 handle: videos
 name: Videos
-sortOrder: 3
+sortOrder: 5

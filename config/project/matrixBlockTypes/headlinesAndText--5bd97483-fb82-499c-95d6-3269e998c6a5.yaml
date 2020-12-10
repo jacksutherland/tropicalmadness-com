@@ -1,11 +1,11 @@
 field: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
 fieldLayouts:
-  24f5ebe0-9627-403b-afd5-40666a0679de:
+  262d2c37-07b0-4025-855a-09e9f44407ce:
     tabs:
       -
         elements:
           -
-            fieldUid: e912234c-0cb2-4caf-a8c6-f721d210f046
+            fieldUid: 1e0bfac4-e5ab-48f2-ab48-6672d5b961b8
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 78a8f55d-faca-436a-a62e-95ce130fede8
+            fieldUid: 03ec6cbd-a743-4f18-bf4b-e2808252a3d8
             instructions: null
             label: null
             required: false
@@ -23,7 +23,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 62bf53ca-803d-45cc-b1a4-339e09b85d21
+            fieldUid: 008cbb5e-18d4-4557-bd22-7a1ba169f75d
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5cbb6ae2-83e9-48cc-8ee7-3468c307ce4e
             instructions: null
             label: null
             required: false
@@ -32,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 75
           -
-            fieldUid: e057035b-35de-4058-bb5c-e1523477c24f
+            fieldUid: ddafc581-7c57-40f2-8604-dfc7ecbc31e9
             instructions: null
             label: null
             required: false
@@ -43,7 +52,73 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  62bf53ca-803d-45cc-b1a4-339e09b85d21:
+  008cbb5e-18d4-4557-bd22-7a1ba169f75d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: richText
+    instructions: ''
+    name: 'Rich Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  03ec6cbd-a743-4f18-bf4b-e2808252a3d8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subheadline
+    instructions: ''
+    name: Subheadline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1e0bfac4-e5ab-48f2-ab48-6672d5b961b8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5cbb6ae2-83e9-48cc-8ee7-3468c307ce4e:
     contentColumnType: text
     fieldGroup: null
     handle: ctaButton
@@ -55,7 +130,7 @@ fields:
       types:
         __assoc__:
           -
-            - fihcdxwz
+            - vadfbogy
             -
               __assoc__:
                 -
@@ -92,7 +167,7 @@ fields:
                   - localizeRelations
                   - false
           -
-            - ftfeqomv
+            - aroszfyc
             -
               __assoc__:
                 -
@@ -122,53 +197,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: flipbox\craft\link\fields\Link
-  78a8f55d-faca-436a-a62e-95ce130fede8:
-    contentColumnType: string
-    fieldGroup: null
-    handle: textAlignment
-    instructions: ''
-    name: 'Text Alignment'
-    searchable: false
-    settings:
-      optgroups: true
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - Left
-            -
-              - value
-              - text-left
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - Center
-            -
-              - value
-              - 'text-left text-lg-center'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Right
-            -
-              - value
-              - 'text-left text-lg-right'
-            -
-              - default
-              - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Dropdown
-  e057035b-35de-4058-bb5c-e1523477c24f:
+  ddafc581-7c57-40f2-8604-dfc7ecbc31e9:
     contentColumnType: string
     fieldGroup: null
     handle: ctaStyle
@@ -188,7 +217,7 @@ fields:
               - button
             -
               - default
-              - '1'
+              - ''
         -
           __assoc__:
             -
@@ -199,38 +228,10 @@ fields:
               - link
             -
               - default
-              - ''
+              - '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-  e912234c-0cb2-4caf-a8c6-f721d210f046:
-    contentColumnType: text
-    fieldGroup: null
-    handle: richText
-    instructions: ''
-    name: 'Rich Text'
-    searchable: true
-    settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
-      columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: Standard.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: true
-      uiMode: enlarged
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\redactor\Field
-handle: richText
-name: 'Rich Text Editor'
-sortOrder: 1
+handle: headlinesAndText
+name: 'Headlines and Text'
+sortOrder: 2

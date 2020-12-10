@@ -4,9 +4,62 @@
 		<div class="rich-text module" data-title="Rich Text Module">
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-12 {{ module.textAlignment }}">
 						{{ module.richText }}
+						{% if module.ctaButton %}
+							<a href="{{ module.ctaButton.url }}" target="{{ module.ctaButton.target }}" class="{% if module.ctaStyle == "button" %}button{% else %}cta-link{% endif %}">
+								{{ module.ctaButton.text }}
+							</a>
+						{% endif %}
 					</div>
+				</div>
+			</div>
+		</div>
+
+	{% case "headlinesAndText" %}
+		<div class="headlines-text module" data-title="Headlines and Text Module">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-12 col-lg-6">
+						{% if module.subheadline | length %}
+							<h4>{{ module.subheadline }}</h4>
+						{% endif %}
+						<h2>{{ module.headline }}</h2>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="mt-lg-4">
+							{{ module.richText }}
+							{% if module.ctaButton %}
+								<a href="{{ module.ctaButton.url }}" target="{{ module.ctaButton.target }}" class="{% if module.ctaStyle == "button" %}button{% else %}cta-link{% endif %}">
+									{{ module.ctaButton.text }}
+								</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% case "imageBlocks" %}
+		<div class="image-blocks module" data-title="Image Blocks Module">
+			<div class="container">
+				<div class="row justify-content-between">
+					{% for item in module.row.all() %}
+						{% set semantic = item.entry.count ? ('a href=' ~ item.entry.one().url) : 'div' %}
+						<div class="col-12 col-lg-6">
+							<{{ semantic }} class="image-block" style="background-image: url('{{ item.image.one().url }}')">
+								{% if item.headline | length %}
+									<h4>{{ item.headline }}</h4>
+								{% endif %}
+								{% if item.text | length %}
+									<div class="image-block-text">
+										{{ item.text }}
+										<div class="cta-link">Learn More</div>
+									</div>
+								{% endif %}
+							</{{ item.entry.count ? 'a' : semantic }}>
+						</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -32,7 +85,7 @@
 							<div class="col-lg-6 order-2 order-lg-1">
 								{{ item.text }}
 								{% if item.ctaButton %}
-									<a href="{{ item.ctaButton.url }}" target="{{ item.ctaButton.target }}"{% if item.ctaStyle == "button" %} class="button"{% endif %}>{{ item.ctaButton.text }}</a>
+									<a href="{{ item.ctaButton.url }}" target="{{ item.ctaButton.target }}" class="{% if module.ctaStyle == "button" %}button{% else %}cta-link{% endif %}">{{ item.ctaButton.text }}</a>
 								{% endif %}
 							</div>
 							{% if item.imageAlignment == "right" %}

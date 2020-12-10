@@ -3,13 +3,25 @@ fieldLayouts:
   a3f61ebf-9361-488e-b9fd-a24b68981543:
     tabs:
       -
-        fields:
-          600bd547-60c5-4d24-a2d1-e7d6d18d7299:
+        elements:
+          -
+            fieldUid: bf425f16-521b-4cae-b422-256b6d007bdb
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          bf425f16-521b-4cae-b422-256b6d007bdb:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 600bd547-60c5-4d24-a2d1-e7d6d18d7299
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -41,6 +53,7 @@ fields:
       fieldLayout: row
       maxRows: ''
       minRows: ''
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''
@@ -62,9 +75,10 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
 handle: accordion
 name: Accordion
-sortOrder: 4
+sortOrder: 6

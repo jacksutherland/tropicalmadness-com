@@ -1,11 +1,11 @@
-field: 4dd991ed-e013-40d6-975d-5866096f678f
+field: b321decb-7590-468e-b55e-2b68b58592e0
 fieldLayouts:
-  89140d63-c25b-4bd0-a3a5-b1c58090483d:
+  6e37d0ae-bdb0-49e8-93a5-9bac5e350560:
     tabs:
       -
         elements:
           -
-            fieldUid: 20c0f2ad-1d13-4e52-87d0-2dba3cb324d6
+            fieldUid: 252a44ac-cb55-43ff-bc38-f746695d61e6
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2d4da001-0127-4201-a7b6-59aa94c98fe1
+            fieldUid: ddd20578-d9c8-4696-af19-09b633279d5a
             instructions: null
             label: null
             required: false
@@ -23,7 +23,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1eb2d6b4-b46d-485d-8892-1cf6e3936fb2
+            fieldUid: b1e70e12-346a-4ca8-a95a-e2b4fbe2d855
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: af2190ee-d330-48e0-8d54-611be5256a2f
             instructions: null
             label: null
             required: false
@@ -34,32 +43,33 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1eb2d6b4-b46d-485d-8892-1cf6e3936fb2:
+  252a44ac-cb55-43ff-bc38-f746695d61e6:
     contentColumnType: string
     fieldGroup: null
-    handle: previewImage
-    instructions: 'This will be displayed prior to the video being played, as well as for playlist video thumbnails.'
-    name: 'Preview Image'
-    searchable: true
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
     settings:
       allowSelfRelations: false
       allowUploads: true
-      allowedKinds:
-        - image
+      allowedKinds: null
       defaultUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
       previewMode: full
-      restrictFiles: '1'
-      selectionLabel: 'Add an Image'
+      restrictFiles: ''
+      selectionLabel: ''
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
       singleUploadLocationSubpath: ''
       source: null
-      sources: '*'
+      sources:
+        - 'volume:7e69bf30-61ad-4925-bef9-3cbaab1b1803'
+        - 'volume:d4918dc3-2cc2-4b07-ba1b-6c9dde83c8ae'
       targetSiteId: null
       useSingleFolder: false
       validateRelatedElements: false
@@ -67,32 +77,56 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  20c0f2ad-1d13-4e52-87d0-2dba3cb324d6:
+  af2190ee-d330-48e0-8d54-611be5256a2f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: entry
+    instructions: 'An entry you''d like this block to link to.'
+    name: Entry
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - singles
+        - 'section:4806c5ad-88d9-43d3-abea-d6a110289b8e'
+        - 'section:f960fa3a-d667-4070-80be-57b945d9d897'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  b1e70e12-346a-4ca8-a95a-e2b4fbe2d855:
     contentColumnType: text
     fieldGroup: null
-    handle: videoUrl
-    instructions: 'i.e. https://www.youtube.com/watch?v=6MFLQu9KowM or https://youtu.be/6MFLQu9KowM'
-    name: 'Video Url'
-    searchable: true
+    handle: text
+    instructions: 'This text only shows on hover'
+    name: Text
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
       code: ''
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: '3'
+      multiline: '1'
       placeholder: ''
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  2d4da001-0127-4201-a7b6-59aa94c98fe1:
+  ddd20578-d9c8-4696-af19-09b633279d5a:
     contentColumnType: text
     fieldGroup: null
-    handle: videoTitle
+    handle: headline
     instructions: ''
-    name: 'Video Title'
-    searchable: true
+    name: Headline
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

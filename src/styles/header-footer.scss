@@ -279,9 +279,9 @@ body {
 		background-color: $black;
 		color: $site-container-color;
 		a {
-			color: $link-hover-color; //lighten($link-color, 5%); // #96826A;
+			color: $gray-font; //$link-hover-color; //lighten($link-color, 5%); // #96826A;
 			&:hover {
-				color: $secondary-color;
+				color: #CCA06E; //$secondary-color;
 			}
 		}
 		.logo {
@@ -297,7 +297,7 @@ body {
 				margin: 0 3px;
 				color: $button-hover-color;
 				&:hover {
-					color: $button-color;
+					color: #CCA06E;
 				}
 			}
 		}
