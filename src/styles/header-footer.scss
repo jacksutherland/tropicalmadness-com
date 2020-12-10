@@ -207,11 +207,13 @@ body {
 				    		color: $font-color;
 				    		font-weight: 400;
 				    		font-size: 0;
+				    		overflow: hidden;
 				    		.menu-title {
 				    			font-size: 1rem;
 				    			display: inline-block;
 				    			vertical-align: top;
 				    			padding: 0 0 0 15px;
+				    			white-space: nowrap;
 				    			&.has-children {
 					    			width: calc(100% - 55px);
 					    		}

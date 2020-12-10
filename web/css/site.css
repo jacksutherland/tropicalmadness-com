@@ -711,12 +711,14 @@ body header {
             font-family: "Calistoga", cursive;
             color: #3B4856;
             font-weight: 400;
-            font-size: 0; }
+            font-size: 0;
+            overflow: hidden; }
             body header .header-content nav ul li a .menu-title {
               font-size: 1rem;
               display: inline-block;
               vertical-align: top;
-              padding: 0 0 0 15px; }
+              padding: 0 0 0 15px;
+              white-space: nowrap; }
               body header .header-content nav ul li a .menu-title.has-children {
                 width: calc(100% - 55px); }
             body header .header-content nav ul li a .child-menu-trigger, body header .header-content nav ul li a .grandchild-menu-trigger {
