@@ -1100,11 +1100,19 @@ body footer {
 
 @media (min-width: 768px) {
   .module {
-    padding: 40px 0; } }
+    padding: 40px 0; }
+    .module:first-child {
+      padding-top: 80px; }
+    .module:last-child {
+      padding-bottom: 80px; } }
 
 @media (min-width: 992px) {
   .module {
     padding: 80px 0; }
+    .module:first-child {
+      padding-top: 160px; }
+    .module:last-child {
+      padding-bottom: 160px; }
     .module + .module {
       padding-top: 1px; }
     .module.z-pattern .image-wrap,
@@ -1117,6 +1125,10 @@ body footer {
 @media (min-width: 1200px) {
   .module {
     padding: 120px 0; }
+    .module:first-child {
+      padding-top: 240px; }
+    .module:last-child {
+      padding-bottom: 240px; }
     .module.z-pattern .image-wrap {
       height: 350px; }
     .module.rich-text {

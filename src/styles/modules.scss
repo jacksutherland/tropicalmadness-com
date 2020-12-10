@@ -256,6 +256,14 @@
 @media (min-width: 768px) {
 	.module{
 		padding: 40px 0;
+
+		&:first-child {
+			padding-top: 80px;
+		}
+
+		&:last-child {
+			padding-bottom: 80px;
+		}
 	}
 }
 
@@ -263,6 +271,13 @@
 @media (min-width: 992px) {
 	.module {
 		padding: 80px 0;
+		&:first-child {
+			padding-top: 160px;
+		}
+
+		&:last-child {
+			padding-bottom: 160px;
+		}
 		& + .module{
 			padding-top: 1px;
 		}
@@ -284,6 +299,13 @@
 @media (min-width: 1200px) {
 	.module {
 		padding: 120px 0;
+		&:first-child {
+			padding-top: 240px;
+		}
+
+		&:last-child {
+			padding-bottom: 240px;
+		}
 		&.z-pattern {
 			.image-wrap{
 				height: 350px;
