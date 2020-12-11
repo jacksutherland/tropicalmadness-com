@@ -275,8 +275,12 @@ video {
     vertical-align: middle;
     color: #ffffff;
     z-index: 9; }
+    .page-header .hero-carousel .header-content .hero-text-wrap h1,
+    .page-header .header-image .header-content .hero-text-wrap h1 {
+      color: #ffffff; }
     .page-header .hero-carousel .header-content .hero-text-wrap p,
     .page-header .header-image .header-content .hero-text-wrap p {
+      color: #ffffff;
       font-size: 1.3rem;
       line-height: 1.55rem; }
     .page-header .hero-carousel .header-content .hero-text-wrap .animated-hero-text,
