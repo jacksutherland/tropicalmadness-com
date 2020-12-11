@@ -4,6 +4,7 @@
 
 .module {
 	padding: 30px 0;
+	background-color: $white;
 
 	&:first-child {
 		padding-top: 60px;
@@ -36,8 +37,13 @@
 	//***** Image Blocks *****//
 
 	&.image-blocks {
+		padding: 15px 0;
 		a.image-block {
 			cursor: pointer;
+		}
+		.row {
+			margin-right: 15px;
+    		margin-left: 15px;
 		}
 		.image-block {
 			display: block;
@@ -58,20 +64,9 @@
 				left: 0;
 				right: 0;
 				background-color: $black;
-				opacity: 0.25;
+				//opacity: 0.25;
+				opacity: 0.6;
 				transition: opacity $transition-time ease-out;
-			}
-			&:hover {
-				&:after {
-					opacity: 0;
-				}
-				h4 {
-					color: $font-color;
-				}
-				.image-block-text {
-					transform: translateX(0);
-					opacity: 1;
-				}
 			}
 			h4 {
 				position: absolute;
@@ -88,17 +83,14 @@
 				left: 0;
 				right: 0;
 				z-index: 5;
-				background-color: rgba(255, 255, 255, 0.95);
 				padding: 20px;
-				border: solid 2px $site-container-color;
 				padding: 55px 30px 25px 30px;
-				color: $font-color;
-				transform: translateX(100%);
-				opacity: 0;
+				color: $white;
 				transition: transform $transition-time ease-out, opacity $transition-time ease-out;
 				.cta-link {
 					margin-top: 10px;
 					font-size: .95rem;
+					color: $white;
 				}
 			}
 		}
@@ -264,6 +256,35 @@
 		&:last-child {
 			padding-bottom: 90px;
 		}
+
+		&.image-blocks {
+			.image-block {
+				&:after {
+					opacity: 0.35;
+				}
+				&:hover {
+					&:after {
+						opacity: 0;
+					}
+					h4 {
+						color: $font-color;
+					}
+					.image-block-text {
+						transform: translateX(0);
+						opacity: 1;
+					}
+				}
+				.image-block-text {
+					background-color: rgba(255, 255, 255, 0.95);
+					color: $font-color;
+					transform: translateX(100%);
+					opacity: 0;
+					.cta-link {
+						color: $link-color;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -278,8 +299,11 @@
 		&:last-child {
 			padding-bottom: 110px;
 		}
-		& + .module{
-			padding-top: 1px;
+		&:not(.image-blocks)
+		{
+			& + .module {
+				padding-top: 1px;
+			}
 		}
 		&.z-pattern {
 			.image-wrap, 
@@ -290,6 +314,13 @@
 		&.rich-text {
 			padding-left: 150px;
 			padding-right: 150px;
+		}
+		&.image-blocks {
+			background-color: $site-container-color;
+			.row {
+				margin-right: -15px;
+	    		margin-left: -15px;
+			}
 		}
 	}
 	

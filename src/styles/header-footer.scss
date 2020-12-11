@@ -207,7 +207,7 @@ body {
 				    		color: $font-color;
 				    		font-weight: 400;
 				    		font-size: 0;
-				    		overflow: hidden;
+				    		//overflow: hidden;
 				    		.menu-title {
 				    			font-size: 1rem;
 				    			display: inline-block;
@@ -243,6 +243,11 @@ body {
 		    					display: none;
 		    					&.active {
 		    						display: block;
+		    					}
+		    					li {
+		    						a { 
+										overflow: hidden;
+		    						}
 		    					}
 		    				}
 		    			}
@@ -361,6 +366,7 @@ body {
 				}
 				nav {
 					border-top: 1px solid $border-color;
+					border-bottom: 1px solid $border-color;
 					border-radius: 0;
 					position: static;
 					display: block !important;

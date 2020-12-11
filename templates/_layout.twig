@@ -92,7 +92,7 @@
 
     </head>
 
-    <body{% if entry is defined %} id="{{ entry.slug }}"{% endif %}>
+    <body{% if entry is defined %} id="{{ entry.slug }}" class="{{ entry.type }}"{% endif %}>
         {% if seoDefaults.gtmContainerId is defined and seoDefaults.gtmContainerId | length %}
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seoDefaults.gtmContainerId }}"

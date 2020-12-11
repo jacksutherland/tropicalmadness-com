@@ -71,6 +71,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin-bottom: .9rem;
+	color: $primary-color;
 }
 
 .h2, h2 {
@@ -93,6 +94,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 	line-height: 1.5rem;
 	text-transform: uppercase;
 	color: $primary-color;
+	margin-bottom: 1rem;
 }
 
 .h4, h4 {
@@ -706,17 +708,17 @@ button, input[type=submit], .button {
 		background-color: $site-container-color;
 		.site-container {
 			padding: ($site-container-padding / 2) $site-container-padding;
-			.module {
-				background-color: $white;
-			}
+			// .module {
+			// 	background-color: $white;
+			// }
 		}
-		&#homepage {
-			.site-container {
-				.page-header {
-					margin-bottom: ($site-container-padding / 2);
-				}
-			}
-		}
+		// &#homepage {
+		// 	.site-container {
+		// 		.page-header {
+		// 			margin-bottom: ($site-container-padding / 2);
+		// 		}
+		// 	}
+		// }
 	}
 	.image-viewer {
 		.active-image-container {

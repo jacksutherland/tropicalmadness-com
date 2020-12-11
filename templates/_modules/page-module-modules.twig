@@ -42,11 +42,11 @@
 
 	{% case "imageBlocks" %}
 		<div class="image-blocks module" data-title="Image Blocks Module">
-			<div class="container">
+			{# <div class="container-fluid no-gutters"> #}
 				<div class="row justify-content-between">
 					{% for item in module.row.all() %}
 						{% set semantic = item.entry.count ? ('a href=' ~ item.entry.one().url) : 'div' %}
-						<div class="col-12 col-lg-6">
+						<div class="col-12 col-sm-6 col-xl-3">
 							<{{ semantic }} class="image-block" style="background-image: url('{{ item.image.one().url }}')">
 								{% if item.headline | length %}
 									<h4>{{ item.headline }}</h4>
@@ -61,7 +61,7 @@
 						</div>
 					{% endfor %}
 				</div>
-			</div>
+			{# </div> #}
 		</div>
 
 	{% case "zPattern" %}
