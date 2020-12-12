@@ -15,11 +15,32 @@ body.products {
 	article {
 		padding: 20px 0;
 		a {
+			&:hover {
+				border-top-color: $link-hover-color;
+				h4, p, .cta-link {
+					color: $link-hover-color;
+				}
+			}
 			display: block;
-			padding: 20px;
-			border: solid 1px $border-color;
-			background-color: lighten($border-color, 10%);
+			border-top: solid 5px $primary-color;
 			min-height: 300px;
+			transition: border-top-color $transition-time;
+			h4 {
+				color: $primary-color;
+				margin-top: 15px;
+				transition: color $transition-time;
+			}
+			p {
+				color: $font-color;
+				transition: color $transition-time;
+				margin-bottom: 10px;
+			}
+			.cta-link {
+				transition: color $transition-time;	
+			}
+			img {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -34,5 +55,37 @@ body.products {
 	    li {
 			display: inline;
 	    }
+	}
+}
+
+.product-portfolio {
+	.module {
+	    border-top: solid 5px $primary-color;
+	   
+	}
+}
+
+@media (min-width: 992px)
+{
+	.product-portfolio {
+		.module {
+		    padding-top: 120px !important;
+		     margin-top: 30px;
+		}
+	}
+	.product-list {
+		article {
+			a {
+				&:hover {
+					img {
+						filter: brightness(100%);
+					}
+				}
+				img {
+					filter: brightness(88%);
+					transition: filter $transition-time;
+				}
+			}
+		}
 	}
 }

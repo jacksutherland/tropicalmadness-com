@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: ac373799-0c0c-4016-b709-6b3ea4d28372
+handle: products
+instructions: ''
+name: Products
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:4806c5ad-88d9-43d3-abea-d6a110289b8e'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

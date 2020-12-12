@@ -26,8 +26,115 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
-        name: Content
+          -
+            fieldUid: d45f6178-2985-48cc-8c2c-bc5fa4f42307
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e26cd422-e351-4c69-949a-85058789370c
+            instructions: 'Select the products you want to display on the portfolio.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Overview
         sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Sections'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 6ff83daa-c3e8-40cf-ae52-ada18d7d91b3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 38ddc493-2d39-48bc-a7d9-4112d20badd2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9c0220b0-176d-4fe7-9500-dc1401aab110
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d922a4c3-0bdc-4495-93a8-f132f998c27f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fb3fab94-bbeb-4eb9-bbcc-b47c8a8e68ad
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ae4c86d7-36b3-4565-86f0-9884f587ef0c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 48d27cfc-9d6c-4cbe-b05a-b5770d3231da
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b68881a1-d09d-48d0-a619-d4e62fabec61
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
 handle: productPortfolio
 hasTitleField: false
 name: 'Product Portfolio'

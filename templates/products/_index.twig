@@ -26,7 +26,12 @@
 			</div>
 		{% endif %}
 
-		{% include 'lists/_lazyloader' with { section: 'products', template: 'products/_products' } %}
+		{# {% include 'lists/_lazyloader' with { section: 'products', template: 'products/_products' } %} #}
+
+		{% set products = craft.entries.section("products") %}
+		<div class="row justify-content-center">
+			{% include 'products/_products' with { entries: products } %}
+		</div>
 
 	</div>
 </div>

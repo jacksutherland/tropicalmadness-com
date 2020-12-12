@@ -2,7 +2,7 @@
 	Template used for lazy loading products
 #}
 {% for product in entries.all() %}
-	<div class="col-12 col-md-6 col-lg-4">
+	<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
 		<article class="h-100">
 			<a href="{{ product.url }}" class="h-100">
 				{% if product.productImages and product.productImages.count > 0 %}
@@ -12,6 +12,9 @@
 				{% if product.briefDescription | length != "" %}
 					<p>{{ product.briefDescription }}</p>
 				{% endif %}
+				<div>
+					<span class="cta-link">Learn More</span>
+				</div>
 			</a>
 		</article>
 	</div>

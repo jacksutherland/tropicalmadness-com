@@ -4,10 +4,42 @@
 
 	{% include "_includes/page-header" %}
 
-	{# {% include "_modules/page-module-top" %} #}
+	{% include "_modules/page-module-top" %}
 
-	{# Put custom homepage content here #}
+	<div class="product-portfolio">
+		{% for product in entry.products %}
+			<div class="module">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-10 col-lg-6{% if loop.index0 %} order-2{% endif %}">
+							<h2>{{ product.friendlyTitle }}</h2>
+							{# <p>{{ product.briefDescription }}</p>
+							{% if product.productImages.count > 1 %}
+								<img src="{{ product.productImages.one().url }}" alt="" class="d-block d-lg-none mt-5 mb-5">
+							{% endif %} #}
+							{{ product.richText }}
+							<div>
+								<a href="{{ product.url }}" class="cta-link">Learn More</a>
+							</div>
+						</div>
+						<div class="col-12 col-md-10 col-lg-4 d-none d-lg-block{% if loop.index0 %} order-1{% endif %}">
+							{% if product.productImages.count > 1 %}
+								<img src="{{ product.productImages.one().url }}" alt="">
+							{% endif %}
+						</div>
+					</div>
+					{% if product.featuredImage.count > 0 %}
+						<div class="row mt-4 mt-lg-5">
+							<div class="col-12 col-md-10 m-auto">
+								<img src="{{ product.featuredImage.one().url }}" alt="{{ product.friendlyTitle }} Package Label"  title="{{ product.friendlyTitle }} Package Label">
+							</div>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 
-	{# {% include "_modules/page-module-bottom" %} #}
+	{% include "_modules/page-module-bottom" %}
 
 {% endblock %}

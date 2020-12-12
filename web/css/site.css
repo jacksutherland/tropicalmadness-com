@@ -868,6 +868,7 @@ body footer {
             width: auto;
             display: none;
             margin-left: 0;
+            margin-top: -5px;
             background: #fff; }
             body header .header-content nav ul > li .child-menu.open {
               display: block; }
@@ -876,7 +877,7 @@ body footer {
               display: block;
               text-align: left;
               background-color: #ffffff;
-              padding: 10px 0;
+              padding: 15px 0 5px 0;
               box-shadow: 0 2px 5px #333333; }
               body header .header-content nav ul > li .child-menu ul > li {
                 position: relative;
@@ -1096,6 +1097,19 @@ body footer {
       box-shadow: inset 0px 0px 0px 6px #1F5432;
       cursor: not-allowed; }
 
+.embed-map {
+  width: 100%;
+  min-height: 350px;
+  background-color: #ffffff;
+  position: relative;
+  padding-bottom: 40%; }
+  .embed-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
 @media (min-width: 576px) {
   .module.z-pattern .image-wrap {
     height: 300px; } }
@@ -1206,10 +1220,25 @@ body.products .hero {
     padding: 20px 0; }
     .product-list article a {
       display: block;
-      padding: 20px;
-      border: solid 1px #dee2e6;
-      background-color: #fbfcfc;
-      min-height: 300px; }
+      border-top: solid 5px #1F5432;
+      min-height: 300px;
+      transition: border-top-color 0.35s; }
+      .product-list article a:hover {
+        border-top-color: #1792cc; }
+        .product-list article a:hover h4, .product-list article a:hover p, .product-list article a:hover .cta-link {
+          color: #1792cc; }
+      .product-list article a h4 {
+        color: #1F5432;
+        margin-top: 15px;
+        transition: color 0.35s; }
+      .product-list article a p {
+        color: #3B4856;
+        transition: color 0.35s;
+        margin-bottom: 10px; }
+      .product-list article a .cta-link {
+        transition: color 0.35s; }
+      .product-list article a img {
+        width: 100%; }
 
 .product-types {
   margin: 30px 0 10px 0; }
@@ -1220,6 +1249,19 @@ body.products .hero {
     display: inline; }
     .product-types ul li {
       display: inline; }
+
+.product-portfolio .module {
+  border-top: solid 5px #1F5432; }
+
+@media (min-width: 992px) {
+  .product-portfolio .module {
+    padding-top: 120px !important;
+    margin-top: 30px; }
+  .product-list article a:hover img {
+    filter: brightness(100%); }
+  .product-list article a img {
+    filter: brightness(88%);
+    transition: filter 0.35s; } }
 
 .locations {
   margin: 20px 0; }
