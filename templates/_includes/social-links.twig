@@ -1,0 +1,21 @@
+{% set contact = craft.entries.section("pages").slug("contact") %}
+<div class="social">
+	{% if contactInfo.facebookLink | length %}
+		<a href="{{ contactInfo.facebookLink }}" target="_blank" title="Follow us on Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+	{% endif %}
+	{% if contactInfo.twitterLink | length %}
+		<a href="{{ contactInfo.twitterLink }}" target="_blank" title="Follow us on Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+	{% endif %}
+	{% if contactInfo.linkedinLink | length %}
+		<a href="{{ contactInfo.linkedinLink }}" target="_blank" title="Contact us on LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+	{% endif %}
+	{% if contactInfo.pinterestLink | length %}
+		<a href="{{ contactInfo.pinterestLink }}" target="_blank" title="Find us on Pinterest"><i class="fab fa-pinterest fa-lg"></i></a>
+	{% endif %}
+	{% if contactInfo.youtubeLink | length %}
+		<a href="{{ contactInfo.youtubeLink }}" target="_blank" title="Find us on YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+	{% endif %}
+	{% if contact.count %}
+		<a href="{{ contact.one().url }}" title="Contact Us"><i class="fas fa-envelope-square fa-lg"></i></a>
+	{% endif %}
+</div>

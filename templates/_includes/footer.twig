@@ -26,23 +26,7 @@
 						<p>Email: <a href="mailto:{{ contactInfo.emailAddress }}">{{ contactInfo.emailAddress }}</a></p>
 					{% endif %}
 				</div>
-				<div class="social">
-					{% if contactInfo.facebookLink | length %}
-						<a href="{{ contactInfo.facebookLink }}" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
-					{% endif %}
-					{% if contactInfo.twitterLink | length %}
-						<a href="{{ contactInfo.twitterLink }}" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
-					{% endif %}
-					{% if contactInfo.linkedinLink | length %}
-						<a href="{{ contactInfo.linkedinLink }}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-					{% endif %}
-					{% if contactInfo.pinterestLink | length %}
-						<a href="{{ contactInfo.pinterestLink }}" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
-					{% endif %}
-					{% if contactInfo.youtubeLink | length %}
-						<a href="{{ contactInfo.youtubeLink }}" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
-					{% endif %}
-				</ul>
+				{% include '_includes/social-links' %}
 			</div>
 		</div>
 	</div>
