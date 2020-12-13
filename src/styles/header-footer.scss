@@ -26,14 +26,15 @@
 }
 
 body {
-	&.scrolling {
-		header {
-			border-bottom: 1px solid $border-color;
-		}
-	}
+	// &.scrolling {
+	// 	header {
+	// 		border-bottom: 1px solid $border-color;
+	// 	}
+	// }
 	&.sticky {
 		padding-top: 180px;
 		header {
+			box-shadow: 0 2px 3px -1px $black;
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -366,13 +367,13 @@ body {
 				}
 				nav {
 					border-top: 1px solid $border-color;
-					border-bottom: 1px solid $border-color;
+					//border-bottom: 1px solid $border-color;
 					border-radius: 0;
 					position: static;
 					display: block !important;
 					font-size: .8rem;
 					padding: 0;
-					background-color: transparent;
+					background-color: $tertiary-color;
 					//text-align: right;
 					text-align: center;
 					width: auto;
@@ -413,9 +414,9 @@ body {
 								z-index: 100;
 								padding: 15px 15px;
 								font-weight: 400;
-								//color: $font-color;
+								color: $white !important;
 								&:hover {
-									color: $link-hover-color;
+									color: $quaternary-color !important; //$link-hover-color;
 								}
 								.menu-title,
 								.menu-title.has-children {
@@ -471,10 +472,14 @@ body {
 												display: block !important;
 											}
 										}
-										a{
+										a {
 											display: inline-block;
 											padding: 5px 5px;
 											font-weight: 400;
+											color: $font-color !important;
+											&:hover {
+												color: $quaternary-color !important; //$link-hover-color;
+											}
 										}
 										.grandchild-menu {
 											display: block;

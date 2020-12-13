@@ -468,7 +468,7 @@ $animated-hero-text-opacity: 0.85;
 		}
 	}
 	.text-header {
-		background-color: $tertiary-color;
+		background-color: #F29A38; //$secondary-color;
 		color: $white;
 		h1 {
 			color: $white;
@@ -598,6 +598,8 @@ button, input[type=submit], .button {
 //********** SEARCH **********//
 
 #search {
+	background-color: $white;
+	padding-top: 1px;
 	form {
 		margin: 50px 0;
 		input {
