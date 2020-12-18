@@ -1,5 +1,5 @@
 fieldLayouts:
-  0fb50660-5ad9-4b77-89ee-ac65afcb83a6:
+  61eeecc1-7dad-49d0-9438-aa3fdbe3f556:
     tabs:
       -
         elements:
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e26cd422-e351-4c69-949a-85058789370c
+            fieldUid: 2a928c6c-cd09-45b9-b2d9-6e360d7e2fbb
             instructions: 'Select the products you want to display on the portfolio.'
             label: ''
             required: ''
@@ -136,10 +136,10 @@ fieldLayouts:
         name: SEO
         sortOrder: 3
 handle: productPortfolio
-hasTitleField: false
+hasTitleField: true
 name: 'Product Portfolio'
-section: 0f6f61c4-86b2-40b8-b8aa-abda8c5000b3
-sortOrder: 1
-titleFormat: '{section.name|raw}'
+section: f960fa3a-d667-4070-80be-57b945d9d897
+sortOrder: 10
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

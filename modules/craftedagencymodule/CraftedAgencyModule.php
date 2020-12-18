@@ -11,6 +11,7 @@
 namespace modules\craftedagencymodule;
 
 use modules\craftedagencymodule\behaviors\CraftedEntryBehavior;
+use modules\craftedagencymodule\behaviors\CraftedAssetBehavior;
 
 use Craft;
 use craft\events\RegisterTemplateRootsEvent;
@@ -81,6 +82,11 @@ class CraftedAgencyModule extends Module
             if (get_class($element) == 'craft\elements\Entry')
             {
                 $element->attachBehavior('myCraftedAgencyEntryBehavior', CraftedEntryBehavior::className());
+            }
+
+            if (get_class($element) == 'craft\elements\Asset')
+            {
+                $element->attachBehavior('myCraftedAgencyAssetBehavior', CraftedAssetBehavior::className());
             }
         });
 

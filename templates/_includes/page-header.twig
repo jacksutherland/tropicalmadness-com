@@ -56,7 +56,12 @@
 			<div class="image-wrap {% if slide.heroImageOverlay != 'overlay-none' %} image-overlay {{ slide.heroImageOverlay }}{% endif %}">
 				{% if slide.heroVideo.count > 0 %}
 					<video loop autoplay muted poster="{{ slide.heroImage.one().url("hero") }}" class="fullscreen-video desktop-header">
-				        <source src="{{ slide.heroVideo.one().url("hero") }}" type="video/mp4">
+						{% if slide.heroVideo.count > 1 %}
+							{% set mobileVideoUrl = slide.heroVideo[1].url() %}
+							<source src="{{ slide.heroVideo.one().responsiveVideoUrl(mobileVideoUrl) }}" type="video/mp4">
+						{% else %}
+					        <source src="{{ slide.heroVideo.one().url() }}" type="video/mp4">
+					    {% endif %}
 				    </video>
 				{% else %}
 					<div class="desktop-header" style="{% if slide.heroImage.count %}background-image: url('{{ slide.heroImage.one().url("hero") }}');{% endif %} {% if slide.heroImageFocalPoint != 'center' %}background-position: {{ slide.heroImageFocalPoint }}{% endif %}" ></div>

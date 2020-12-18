@@ -1,0 +1,84 @@
+field: 99307c2f-aef4-47e5-b0d6-8e2fd644d90c
+fieldLayouts:
+  10b56a27-4431-44e2-81e9-0cd317881176:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0921595c-6f4d-4a97-92f4-f0955aa47a20
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c643e11b-2cad-44f8-b702-e71059b6953f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0921595c-6f4d-4a97-92f4-f0955aa47a20:
+    contentColumnType: text
+    fieldGroup: null
+    handle: address
+    instructions: ''
+    name: Address
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c643e11b-2cad-44f8-b702-e71059b6953f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mapSize
+    instructions: '''Cover'' expands to the full width of the page while ''Contain'' is centered in the middle of the page.'
+    name: 'Map Size'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Cover
+            -
+              - value
+              - cover
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Contain
+            -
+              - value
+              - contain
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: googleMap
+name: 'Google Map'
+sortOrder: 7
