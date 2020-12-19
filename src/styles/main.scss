@@ -468,10 +468,11 @@ $animated-hero-text-opacity: 0.85;
 		}
 	}
 	.text-header {
-		background-color: #F29A38; //$secondary-color;
-		color: $white;
+		background-color: rgba(242, 154, 56, 0.18); //#F29A38; //$secondary-color;
+		padding: 30px 0;
+		color: $tertiary-color;
 		h1 {
-			color: $white;
+			color: $tertiary-color;
 		}
 	}
 }

@@ -348,10 +348,11 @@ video {
     width: 100%; }
 
 .page-header .text-header {
-  background-color: #F29A38;
-  color: #ffffff; }
+  background-color: rgba(242, 154, 56, 0.18);
+  padding: 30px 0;
+  color: #1792cc; }
   .page-header .text-header h1 {
-    color: #ffffff; }
+    color: #1792cc; }
 
 input {
   width: 100%; }
