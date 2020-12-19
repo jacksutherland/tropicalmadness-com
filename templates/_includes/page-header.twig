@@ -78,8 +78,9 @@
 							<div class="hero-text-wrap text-left{% if not heroIsAnimated %} text-xl-center mx-lg-auto{% else %} col-xl-7{% endif %} col-12 col-md-9">
 								{% if slide.heroTitle %}
 									{% if heroIsAnimated %}
-										<h1 class="animated-hero-text d-none d-md-block" data-array="{{slide.heroTitle}}"></h1>
-										<h1 class="d-block d-md-none text-center">{{ entry.friendlyTitle }}</h1>
+										{# <h1 class="animated-hero-text d-none d-md-block" data-array="{{slide.heroTitle}}"></h1>
+										<h1 class="d-block d-md-none text-center">{{ entry.friendlyTitle }}</h1> #}
+										<h1 class="animated-hero-text" data-array="{{slide.heroTitle}}"></h1>
 									{% else %}
 										<h1>{{ slide.heroTitle }}</h1>
 									{% endif %}

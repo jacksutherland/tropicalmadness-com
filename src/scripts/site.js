@@ -49,9 +49,9 @@ dom.onLoad(function()
 	var maps = document.getElementsByClassName('embed-map');
 	for(var i = 0; i < maps.length; i++)
 	{
-		console.log('map ' + i);
+		//console.log('map ' + i);
 		var address = maps[i].dataset.address;
-		console.log('address ' + address);
+		//console.log('address ' + address);
 		maps[i].innerHTML = "<iframe width='100%' height='450' frameborder='0' scrolling='no' allowfullscreen='false' aria-hidden='true' tabindex='0' src='https://maps.google.com/maps?&amp;q="
 			+ encodeURIComponent( address ) 
 			+ "&amp;output=embed'></iframe>";  
