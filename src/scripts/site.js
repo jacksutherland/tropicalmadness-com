@@ -195,7 +195,7 @@ var ux = {
 	hero: {
 		animateText: function(textElement)
 		{
-			var intervalDuration = 12000;
+			var intervalDuration = 13000;
 			var arrayCount = 0;
 			var textArray = textElement.dataset.array.replace(/[\[\]']+/g, '').split('~');
 			var hero = document.getElementsByClassName('hero')[0];
